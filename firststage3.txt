@@ -1,0 +1,17 @@
+First Stage Estimates, DTP					
+	(1)	(2)	(3)	(4)	(5)
+VARIABLES	F2.mortality	F3.mortality	F4.mortality	F2.mortality	F3.mortality
+					
+0b.low#c.unicefdtp1	-0.179	-0.184	-0.160	-0.389***	-0.356***
+	[0.118]	[0.118]	[0.119]	[0.0900]	[0.0854]
+1.low#c.unicefdtp1	-1.213***	-1.163***	-1.055***	-1.097***	-1.052***
+	[0.178]	[0.170]	[0.163]	[0.130]	[0.124]
+loghealthcare	-4.080**	-3.459*	-2.702		
+	[1.970]	[1.842]	[1.726]		
+loggni				3.647	4.941
+				[3.313]	[3.351]
+					
+R-squared	0.508	0.500	0.489	0.572	0.563
+Number of pan_id	186	186	186	185	185
+Robust standard errors in brackets					
+*** p<0.01, ** p<0.05, * p<0.1					

@@ -1,0 +1,23 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lccccc}
+\multicolumn{6}{c}{First Stage Estimates, Measles} \\ \hline
+ & (1) & (2) & (3) & (4) & (5) \\
+VARIABLES & F2.mortality & F3.mortality & F4.mortality & F2.mortality & F3.mortality \\ \hline
+ &  &  &  &  &  \\
+0b.low\#c.unicefmcv1 & -0.0171 & -0.0113 & -0.00627 & -0.135* & -0.112 \\
+ & [0.0845] & [0.0816] & [0.0767] & [0.0701] & [0.0682] \\
+1.low\#c.unicefmcv1 & -1.078*** & -1.020*** & -0.932*** & -0.963*** & -0.914*** \\
+ & [0.140] & [0.131] & [0.124] & [0.104] & [0.0978] \\
+loghealthcare & -4.114** & -3.452** & -2.731* &  &  \\
+ & [1.825] & [1.732] & [1.645] &  &  \\
+loggni &  &  &  & 3.573 & 4.957 \\
+ &  &  &  & [3.483] & [3.540] \\
+ &  &  &  &  &  \\
+R-squared & 0.546 & 0.535 & 0.522 & 0.573 & 0.562 \\
+ Number of pan\_id & 186 & 186 & 186 & 185 & 185 \\ \hline
+\multicolumn{6}{c}{ Robust standard errors in brackets} \\
+\multicolumn{6}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{document}

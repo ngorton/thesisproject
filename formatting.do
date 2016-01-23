@@ -1,5 +1,6 @@
 *Saving all data into formatting*
 *Country Reported Data*
+*FIRST - run schooling.do to format Barro/Lee schooling data*
 
 insheet using countryreported_coverage_DTP1.csv, comma names
 reshape long yr, i(iso_code) j(year)
@@ -24,6 +25,15 @@ drop vaccine
 save countryreportedMCV1, replace
 
 clear
+
+insheet using countryreported_coverage_MCV2.csv, comma names
+reshape long yr, i(iso_code) j(year)
+rename yr countrymcv2
+drop vaccine
+save countryreportedMCV2, replace
+
+clear
+
 
 insheet using countryreported_coverage_MCV2.csv, comma names
 reshape long yr, i(iso_code) j(year)
@@ -89,26 +99,6 @@ insheet using age_vaccines.csv, comma names
 save agemeasles, replace
 clear
 
-*Loading number of cases by year and country*
-insheet using dtp_cases.csv, comma names
-reshape long dtpcases, i(iso_code) j(year)
-drop disease
-save dtpcases, replace
-
-clear
-
-insheet using measlescases.csv, comma names
-reshape long measlescases, i(iso_code) j(year)
-save measlescases, replace
-
-clear
-
-insheet using polio_cases.csv, comma names
-reshape long poliocases, i(iso_code) j(year)
-drop disease
-save poliocases, replace
-
-clear
 
 *Loading some world bank data*
 insheet using population.csv, comma names
@@ -125,6 +115,27 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save under14pop, replace
 clear
 
+
+insheet using healthcare_percapita.csv, comma names
+reshape long healthcare, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+save healthcarepercapita, replace
+
+clear
+insheet using under5pop.csv, comma names
+reshape long under5pop, i(iso_code) j(year)
+save under5pop, replace
+
+clear
+
+*NEED TO REDOWNLOAD MORTALITY DATA* 
+*insheet using under5mortality_complete.csv, comma names
+*rename code isocode
+*save completeunder5, replace
+
+clear
+
 *Measeles vaccine introduction*
 insheet using MCV2_year_introduction.csv, comma names
 save measles_details, replace
@@ -134,6 +145,9 @@ save measles_details, replace
 use countryreportedDTP1
 
 merge 1:1 iso_code year using countryreportedDTP3
+drop _merge
+
+merge 1:1 iso_code year using under5pop
 drop _merge
 
 merge 1:1 iso_code year using countryreportedMCV1
@@ -160,55 +174,32 @@ drop _merge
 merge 1:1 iso_code year using unicefestimatedPol3
 drop _merge
 
-merge 1:1 iso_code year using dtpcases
-drop _merge
-
-merge 1:1 iso_code year using measlescases
-drop _merge
-
-merge 1:1 iso_code year using poliocases
-drop _merge
-
 merge 1:1 iso_code year using population
+keep if _merge == 3
 drop _merge
 
 merge 1:1 iso_code year using under14pop
 drop _merge
 
+merge 1:1 iso_code year using healthcarepercapita
+drop _merge
+
+merge 1:1 iso_code year using cases
+drop _merge
+
+merge 1:1 iso_code year using deaths_clean
+drop _merge
+
+merge 1:1 iso_code year using gdpcap
+drop _merge
 
 save master, replace
 
-
 clear
 
-use total_schooling
-gen agegroup = 0
-
-replace agegroup = 1 if (agefrom == 15 & ageto == 19) 
-replace agegroup = 2 if (agefrom == 20 & ageto == 24) 
-replace agegroup = 3 if (agefrom == 25 & ageto == 29) 
-replace agegroup = 4 if (agefrom == 30 & ageto == 34) 
-replace agegroup = 5 if (agefrom == 35 & ageto == 39) 
-replace agegroup = 6 if (agefrom == 40 & ageto == 44) 
-replace agegroup = 7 if (agefrom == 45 & ageto == 49) 
-replace agegroup = 8 if (agefrom == 50 & ageto == 54) 
-replace agegroup = 9 if (agefrom == 55 & ageto == 59) 
-replace agegroup = 10 if (agefrom == 60 & ageto == 64) 
-replace agegroup = 11 if (agefrom == 65 & ageto == 69) 
-replace agegroup = 12 if (agefrom == 75 & ageto == 999) 
-replace agegroup = 13 if (agefrom == 25 & ageto == 999) 
-replace agegroup = 14 if (agefrom == 15 & ageto == 999) 
-
-drop ageto
-drop agefrom
-
-*choose one age group to look at*
-keep if (agegroup == 14)
+use schooling_formatted
 
 merge 1:1 iso_code year using master
-
-keep if (_merge == 3)
-
 drop _merge
 
 save totaldata, replace
@@ -220,7 +211,6 @@ replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
 
 merge 1:1 iso_code year using totaldata
-
 drop _merge
 
 save totalmortality, replace
@@ -230,12 +220,10 @@ replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
 
 merge 1:1 iso_code year using totalmortality
-
 drop _merge
 
 *GNI per capita, constant 2005 USD*
 merge 1:1 iso_code year using gnipercap
-
 drop _merge
 
 merge m:1 iso_code using measles_details
@@ -243,68 +231,15 @@ merge m:1 iso_code using measles_details
 *create dummy for gavi status*
 tabulate gavi_mcv2, gen(gavi_status)
 
-rename iso_code code
 drop _merge
-drop gavi_mcv2
+
 drop gavi_status1
 
+rename iso_code code
+
+drop gavi_mcv2
+drop gavi_status2
+
+sort country year
+
 save completedata, replace
-
-*** Begin the cleaning and calculating! ***
-
-*Drop if outside date range*
-drop if year < 1980
-*Drop if missing schooling data*
-by code year, sort: drop if missing(lp)
-*Drop if missing measles data*
-by code (year), sort: drop if _n == sum(mi(countrymcv1))
-
-*average GNI*
-bys code: egen ave_gni = mean(gni)
-
-*this causes some weird things, not sure what to do*
-*Why is this missing in places? should be readily available* 
-replace gni = ave_gni if missing(gni) 
-
-*do some simple calculations*
-bys code year: gen youngpop = (under14pop/100) * pop
-
-*poor countries*
-bys year code: gen poor = 0
-replace poor = 1 if gni <= 1045
-
-*medium countries*
-bys year code: gen medium = 0
-replace medium = 1 if(gni > 1045 & gni <= 12736)
-
-*rich countries*
-bys code year: gen rich = 0
-replace rich = 1 if gni > 12736
-
-*generate country income classifications based on WB guidelines*
-*general categories by year*
-bys code year: gen category = ""
-replace category = "poor" if poor == 1
-replace category = "medium" if medium == 1
-replace category = "rich" if rich == 1
-
-*create log levels of variables*
-gen loglifeexpect = log(lifeexpect)
-
-*set up panel*
-encode code, gen(pan_id)
-tsset pan_id year
-
-*generate factor variables for fixed effects*
-tabulate pan_id, gen(cntry)
-tabulate year, gen(yr)
-
-*logs*
-gen logmortality = log(mortality)
-gen loglifeexpect = log(lifeexpect)
-
-*percentage enrolled in primary school*
-*is primary school a prerequisite for secondary school*
-gen primary = lp + ls + lh
-
-*people who went to primary school but didnt finish*

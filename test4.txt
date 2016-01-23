@@ -1,0 +1,14 @@
+		(1)
+VARIABLES	LABELS	Entire Sample
+		
+unicefmcv1	Unicef-Reported MCV1 Coverage	-0.897***
+		(0.0396)
+Constant	Constant	127.4***
+		(4.579)
+		
+Observations		863
+Number of pan_id		140
+Country FE		No
+Time FE		No
+Standard errors in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		

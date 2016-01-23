@@ -1,0 +1,13 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	Entire Sample	Entire Sample	Low Income Countries	High Income Countries
+					
+unicefmcv1	Unicef-Reported MCV1 Coverage	-0.897***	-0.522***	-0.466***	-0.195**
+		(0.0396)	(0.0755)	(0.158)	(0.0864)
+					
+Observations		863	863	292	186
+R-squared			0.504	0.631	0.444
+Number of pan_id		140	140	48	30
+Country FE		No	Yes	Yes	Yes
+Time FE		No	Yes	Yes	Yes
+Standard errors in parentheses					
+*** p<0.01, ** p<0.05, * p<0.1					
