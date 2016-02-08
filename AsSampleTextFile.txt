@@ -1,0 +1,15 @@
+
+
+here is how to do git stuff:
+
+if no new files (ie, only edit old ones)
+
+git commit -am "[message here]"
+
+git push
+
+else:
+
+git add .
+
+then do the above two
