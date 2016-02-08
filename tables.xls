@@ -1,0 +1,806 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Nicole Gorton</LastAuthor>
+  <Created>2016-02-04T17:28:17Z</Created>
+  <LastSaved>2016-02-05T18:01:05Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>6780</WindowHeight>
+  <WindowWidth>23260</WindowWidth>
+  <WindowTopX>1280</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <Calculation>SemiAutomaticCalculation</Calculation>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Interior ss:Color="#FCF305" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <Interior ss:Color="#FCF305" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s66">
+   <Borders/>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s68">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri"/>
+   <Interior ss:Color="#FCF305" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s69">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s71">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <Interior ss:Color="#FCF305" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s72">
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="19" ss:ExpandedRowCount="35" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="14">
+   <Column ss:AutoFitWidth="0" ss:Width="348"/>
+   <Column ss:AutoFitWidth="0" ss:Width="58" ss:Span="11"/>
+   <Column ss:Index="14" ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="58"/>
+   <Column ss:AutoFitWidth="0" ss:Width="58" ss:Span="4"/>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s63"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(1)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(2)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(3)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(4)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(5)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(6)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(7)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(8)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(9)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(10)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(11)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(12)</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">(13)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(14)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(15)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(16)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(17)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(18)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 IV</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 2 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 2 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 2 IV</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 IV</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 1 IV</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Inst. 2 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 2 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 2 IV</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 FS</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 RF</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Inst. 3 IV</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">VARIABLES</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1-yr Lag</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">5-yr Lag</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s63"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">cL.diff_mcv1coverage#cL.uncoveredmcv1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.000758</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.00109*</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.00169)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.000641)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Under 5 Mortality = L,</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">3.920</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.0100</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.682</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-6.612</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.265</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.871</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(22.28)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.698)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(2.684)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(441.1)</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.517)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(1.317)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0bL.not_mcv_covered#cL.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0803</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.227</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.138)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.140)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">1L.not_mcv_covered#cL.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0530</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.00996</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0624)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0299)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0bL.not_mcv_covered#cL.uncoveredmcv1#cL.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.00485</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0275</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0228)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0195)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">1L.not_mcv_covered#cL.uncoveredmcv1#cL.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.000749</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.00114*</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.00169)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.000641)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">cL5.diff_mcv1coverage#cL5.uncoveredmcv1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.00188</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">6.08e-06</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.00119)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.000600)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0bL5.not_mcv_covered#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">-0.242</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0870</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">(0.154)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0760)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">1L5.not_mcv_covered#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">-0.0899**</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0182</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">(0.0351)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0307)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0bL5.not_mcv_covered#cL5.uncoveredmcv1#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0526**</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.0117</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0254)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.0117)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">1L5.not_mcv_covered#cL5.uncoveredmcv1#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">-0.00179</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">1.74e-05</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.00116)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">(0.000603)</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">R-squared</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.753</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.668</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.753</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.669</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.753</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.669</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.754</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.716</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">0.754</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.716</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.755</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">0.716</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Number of pan_id</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">71</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">71</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">71</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">70</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">70</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">70</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">65</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Country FE</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Year FE</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Controls</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">Robust standard errors in parentheses</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">*** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>6</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+   <x:ProtectedObjects>False</x:ProtectedObjects>
+   <x:ProtectedScenarios>False</x:ProtectedScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

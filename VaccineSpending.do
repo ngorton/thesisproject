@@ -1,0 +1,27 @@
+* Vaccine Spending *
+
+sort gavi_status_00
+
+lab def origin 0 "Not-GAVI Supported" 1 "GAVI-Supported", modify
+
+estpost tabstat vaxspending unicefmcv1 unicefmcv2 unicefdtp1 unicefdtp3 measles_prcnt_under5 dtp_prcnt_under5, by(gavi_status_00) statistics(mean sd max min) columns(statistics) listwise not 
+esttab using tables.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber addnote("note")  eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2)) min(fmt(2)) max(fmt(2))")  
+
+estpost tabstat mortality lifeexpect rateofoutofschoolMF logpop loggni, by(gavi_status_00) statistics(mean sd max min) columns(statistics) listwise not a3
+esttab using tables2.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber addnote("note") eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2)) min(fmt(2)) max(fmt(2))")  
+
+estpost tabstat vaxspending unicefmcv1 unicefmcv2 unicefdtp1 unicefdtp3 measles_prcnt_under5 dtp_prcnt_under5 mortality lifeexpect rateofoutofschoolMF logpop loggni, by(gavi_status_00) statistics(mean sd) columns(statistics) listwise not 
+esttab using tables3.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber addnote("note")  eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2))")  
+
+
+
+xtreg unicefmcv1 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
+outreg2 using firststage2.tex, label nocons keep(l5.mortality) noobs replace ctitle("OLS, 5-year Lag") addtext(Country FE, Yes, Year FE, Yes, Controls, Yes)
+
+xtreg unicefmcv2 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
+
+xtreg unicefdtp1 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
+
+xtreg unicefdtp3 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
+
+xtreg unicefpol3 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)

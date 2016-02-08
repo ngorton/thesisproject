@@ -1,0 +1,32 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lcccc}
+\multicolumn{5}{c}{OLS Estimates} \\ \hline
+ & (1) & (2) & (3) & (4) \\
+ & First Stage & First Stage & First Stage & First Stage \\
+VARIABLES & 1-year Lag & 2-year Lag & 5-year Lag & 7-year Lag \\ \hline
+ &  &  &  &  \\
+Under 5 Mortality = L, & 0.151*** &  &  &  \\
+ & (0.0466) &  &  &  \\
+loggni & -0.0173 & -0.190 & -1.063 & -0.794 \\
+ & (2.407) & (2.314) & (2.307) & (2.386) \\
+Log Population & -30.21** & -32.75** & -45.73*** & -43.19*** \\
+ & (13.66) & (13.42) & (12.81) & (11.11) \\
+Under 5 Mortality = L, &  & 0.148*** &  &  \\
+ &  & (0.0452) &  &  \\
+Under 5 Mortality = L, &  &  & 0.116*** &  \\
+ &  &  & (0.0396) &  \\
+Under 5 Mortality = L, &  &  &  & 0.128*** \\
+ &  &  &  & (0.0370) \\
+ &  &  &  &  \\
+Observations & 915 & 903 & 877 & 856 \\
+R-squared & 0.687 & 0.688 & 0.705 & 0.691 \\
+Number of pan\_id & 66 & 66 & 66 & 66 \\
+Country FE & Yes & Yes & Yes & Yes \\
+Year FE & Yes & Yes & Yes & Yes \\
+ Controls & Yes & Yes & Yes & Yes \\ \hline
+\multicolumn{5}{c}{ Robust standard errors in parentheses} \\
+\multicolumn{5}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{document}

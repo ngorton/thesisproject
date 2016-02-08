@@ -1,0 +1,24 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)
+		OLS	OLS	Reduced-Form	Reduced-Form	First Stage	First Stage	IV	IV
+VARIABLES	LABELS	1-year Lag	2-year Lag	1-year Lag	2-year Lag	1-year Lag	2-year Lag	1-year Lag	2-year Lag
+									
+L.mortality	Under 5 Mortality = L,	0.151***						0.318**	0.275*
+		(0.0466)						(0.145)	(0.150)
+L2.mortality	Under 5 Mortality = L,		0.148***						
+			(0.0452)						
+L.unicefdtp1	Unicef-Reported DTP1 Coverage = L,			-0.181**		-0.513***			
+				(0.0751)		(0.158)			
+0L.not_dtp_covered#cL.diff_dtp1coverage				0.0859		0.146			
+				(0.0519)		(0.113)			
+L2.unicefdtp1	Unicef-Reported DTP1 Coverage = L,				-0.170**		-0.463***		
+					(0.0754)		(0.154)		
+0L2.not_dtp_covered#cL2.diff_dtp1coverage					0.0630		0.181*		
+					(0.0500)		(0.0972)		
+									
+R-squared		0.687	0.688	0.680	0.692	0.769	0.766		
+Number of pan_id		66	66	65	65	71	71	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses									
+*** p<0.01, ** p<0.05, * p<0.1									

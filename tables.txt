@@ -1,0 +1,34 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)	(18)
+		Inst. 1 FS	Inst. 1 RF	Inst. 1 IV	Inst. 2 FS	Inst. 2 RF	Inst. 2 IV	Inst. 3 FS	Inst. 3 RF	Inst. 3 IV	Inst. 1 FS	Inst. 1 RF	Inst. 1 IV	Inst. 2 FS	Inst. 2 RF	Inst. 2 IV	Inst. 3 FS	Inst. 3 RF	Inst. 3 IV
+VARIABLES	LABELS	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	1-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag	1-yr Lag	1-yr Lag	5-yr Lag
+																			
+cL.diff_mcv1coverage#cL.uncoveredmcv1		-0.000758	0.00109*																
+		(0.00169)	(0.000641)																
+L.mortality	Under 5 Mortality = L,			3.920			0.0100			0.682			-6.612			0.265			-0.871
+				(22.28)			(0.698)			(2.684)			(441.1)			(0.517)			(1.317)
+0bL.not_mcv_covered#cL.diff_mcv1coverage					-0.0803	-0.227													
+					(0.138)	(0.140)													
+1L.not_mcv_covered#cL.diff_mcv1coverage					-0.0530	0.00996													
+					(0.0624)	(0.0299)													
+0bL.not_mcv_covered#cL.uncoveredmcv1#cL.diff_mcv1coverage								-0.00485	-0.0275										
+								(0.0228)	(0.0195)										
+1L.not_mcv_covered#cL.uncoveredmcv1#cL.diff_mcv1coverage								-0.000749	0.00114*										
+								(0.00169)	(0.000641)										
+cL5.diff_mcv1coverage#cL5.uncoveredmcv1											-0.00188	6.08e-06							
+											(0.00119)	(0.000600)							
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage														-0.242	-0.0870				
+														(0.154)	(0.0760)				
+1L5.not_mcv_covered#cL5.diff_mcv1coverage														-0.0899**	-0.0182				
+														(0.0351)	(0.0307)				
+0bL5.not_mcv_covered#cL5.uncoveredmcv1#cL5.diff_mcv1coverage																	-0.0526**	-0.0117	
+																	(0.0254)	(0.0117)	
+1L5.not_mcv_covered#cL5.uncoveredmcv1#cL5.diff_mcv1coverage																	-0.00179	1.74e-05	
+																	(0.00116)	(0.000603)	
+																			
+R-squared		0.753	0.668		0.753	0.669		0.753	0.669		0.754	0.716		0.754	0.716		0.755	0.716	
+Number of pan_id		71	65	65	71	65	65	71	65	65	70	65	65	70	65	65	70	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses																			
+*** p<0.01, ** p<0.05, * p<0.1																			

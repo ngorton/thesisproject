@@ -12,7 +12,11 @@ for (k in 1:ncol(country.mat)) {
 
 for (j in 1:length(mortality.vector)) {
   
+<<<<<<< HEAD
 country.gdpscale <- abs(rnorm(1, mean = 0.15, sd = 0.03))
+=======
+country.gdpscale <- abs(rnorm(1, mean = 0.15, sd = 0.07))
+>>>>>>> ec43410... first commit in a while. usually make this message informative
   
 prob.child.death <- abs(mortality.vector[j]-country.gdpscale)
 prob.young.death <- 0.2

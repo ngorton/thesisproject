@@ -1,0 +1,36 @@
+Coverage Level X Herd Dummy, RF, 2-yr Lag												
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)
+		Coverage Level X Herd Dummy		Coverage Level X Herd Dummy	Diff Coverage X Uncovered Level	Diff Coverage X Uncovered Level	Diff Coverage X Uncovered Level	Diff Coverage X covered X Herd dummy	Diff Coverage X covered X Herd dummy	Diff Coverage X covered X Herd dummy	Diff Coverage X covered X Herd dummy	Diff Coverage X covered X Herd dummy
+		FS	Rate of out-of-school children of primary school age	IV	FS	RF	IV	FS	FS	FS	RF	IV
+VARIABLES	LABELS	2-yr Lag	both sexes (%)	2-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag	7-yr Lag	6-yr Lag	5-yr Lag	5-yr Lag	5-yr Lag
+												
+0bL2.not_mcv_covered#cL2.unicefmcv1		-0.309***	-0.121**									
+		(0.109)	(0.0538)									
+1L2.not_mcv_covered#cL2.unicefmcv1		-0.334***	-0.136***									
+		(0.119)	(0.0506)									
+L.mortality	Under 5 Mortality = L,			0.374**			0.265					0.121
+				(0.156)			(0.517)					(0.198)
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage					-0.242	-0.0870						
+					(0.154)	(0.0760)						
+1L5.not_mcv_covered#cL5.diff_mcv1coverage					-0.0899**	-0.0182						
+					(0.0351)	(0.0307)						
+0bL7.not_mcv_covered#cL7.diff_mcv1coverage#cL7.unicefmcv1								-0.00194				
+								(0.00180)				
+1L7.not_mcv_covered#cL7.diff_mcv1coverage#cL7.unicefmcv1								-0.00126**				
+								(0.000528)				
+0bL6.not_mcv_covered#cL6.diff_mcv1coverage#cL6.unicefmcv1									-0.00183			
+									(0.00155)			
+1L6.not_mcv_covered#cL6.diff_mcv1coverage#cL6.unicefmcv1									-0.00131**			
+									(0.000557)			
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.unicefmcv1										-0.00245	-0.000926	
+										(0.00161)	(0.000805)	
+1L5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.unicefmcv1										-0.00135**	-0.000477	
+										(0.000563)	(0.000518)	
+												
+R-squared		0.763	0.681		0.754	0.716		0.759	0.757	0.754	0.716	
+Number of pan_id		71	65	65	70	65	65	70	70	70	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses												
+*** p<0.01, ** p<0.05, * p<0.1												

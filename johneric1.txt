@@ -1,0 +1,24 @@
+Coverage level X herd immunity dummy				
+		(1)	(2)	(3)
+		First Stage	Reduced Form	IV
+VARIABLES	LABELS	2-year Lag	2-year Lag	2-year Lag
+				
+0bL.not_mcv_covered#cL2.unicefmcv1		-0.313***	-0.124**	
+		(0.112)	(0.0553)	
+1L.not_mcv_covered#cL2.unicefmcv1		-0.323***	-0.128**	
+		(0.115)	(0.0510)	
+loggni	loggni	-9.299**	-1.451	1.875
+		(4.659)	(2.229)	(2.646)
+logpop	Log Population	-141.6***	-61.33***	2.816
+		(28.38)	(11.01)	(32.60)
+L.mortality	Under 5 Mortality = L,			0.326**
+				(0.133)
+				
+Observations		1,770	872	871
+R-squared		0.762	0.680	
+Number of pan_id		71	65	65
+Country FE		Yes	Yes	Yes
+Year FE		Yes	Yes	Yes
+Controls		Yes	Yes	Yes
+Robust standard errors in parentheses				
+*** p<0.01, ** p<0.05, * p<0.1				

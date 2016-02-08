@@ -1,0 +1,24 @@
+Dfferences in coverage X uncovered level				
+		(1)	(2)	(3)
+		First Stage	First Stage	IV
+VARIABLES	LABELS	5-year Lag	5-year Lag	5-year Lag
+				
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.0526**	-0.0117	
+		(0.0254)	(0.0117)	
+1L5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.00179	1.74e-05	
+		(0.00116)	(0.000603)	
+loggni	loggni	-10.26**	-4.209*	-4.663
+		(4.652)	(2.491)	(3.185)
+logpop	Log Population	-162.9***	-75.15***	-84.75**
+		(30.65)	(10.16)	(33.82)
+L.mortality	Under 5 Mortality = L,			-0.0436
+				(0.143)
+				
+Observations		1,580	802	802
+R-squared		0.755	0.716	
+Number of pan_id		70	65	65
+Country FE		Yes	Yes	Yes
+Year FE		Yes	Yes	Yes
+Controls		Yes	Yes	Yes
+Robust standard errors in parentheses				
+*** p<0.01, ** p<0.05, * p<0.1				

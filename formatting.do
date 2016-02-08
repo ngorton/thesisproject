@@ -26,6 +26,19 @@ save countryreportedMCV1, replace
 
 clear
 
+insheet using line_item_vaccines.csv, comma names
+reshape long natlbudget, i(iso_code) j(year)
+save line_item, replace
+
+clear
+
+insheet using percent_total_expenditure_on_vacc_gov_funded.csv, comma names
+reshape long vaxspending, i(iso_code) j(year)
+save percent_total_expenditure_on_vacc_gov_funded, replace
+
+
+clear
+
 insheet using countryreported_coverage_MCV2.csv, comma names
 reshape long yr, i(iso_code) j(year)
 rename yr countrymcv2
@@ -77,6 +90,8 @@ save unicefestimatedMCV1, replace
 
 clear
 
+
+
 insheet using UNICEFcoverage_estimates_MCV2.csv, comma names
 reshape long yr, i(iso_code) j(year)
 rename yr unicefmcv2
@@ -115,6 +130,13 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save under14pop, replace
 clear
 
+insheet using mortality_before1980.csv, comma names
+reshape long mortality, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+save oldmort, replace
+clear
+
 
 insheet using healthcare_percapita.csv, comma names
 reshape long healthcare, i(iso_code) j(year)
@@ -148,6 +170,12 @@ merge 1:1 iso_code year using countryreportedDTP3
 drop _merge
 
 merge 1:1 iso_code year using under5pop
+drop _merge
+
+merge 1:1 iso_code year using percent_total_expenditure_on_vacc_gov_funded
+drop _merge
+
+merge 1:1 iso_code year using line_item 
 drop _merge
 
 merge 1:1 iso_code year using countryreportedMCV1
@@ -193,6 +221,15 @@ drop _merge
 merge 1:1 iso_code year using gdpcap
 drop _merge
 
+<<<<<<< HEAD
+=======
+merge 1:1 iso_code year using schooling_formatted
+drop _merge
+
+merge 1:1 iso_code year using oldmort
+drop _merge
+
+>>>>>>> ec43410... first commit in a while. usually make this message informative
 save master, replace
 
 clear
@@ -209,7 +246,7 @@ save totaldata, replace
 use under5mortality, clear
 replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
-
+drop if year < 1981
 merge 1:1 iso_code year using totaldata
 drop _merge
 
@@ -225,6 +262,7 @@ drop _merge
 *GNI per capita, constant 2005 USD*
 merge 1:1 iso_code year using gnipercap
 drop _merge
+<<<<<<< HEAD
 
 merge m:1 iso_code using measles_details
 
@@ -239,6 +277,9 @@ rename iso_code code
 
 drop gavi_mcv2
 drop gavi_status2
+=======
+rename iso_code code
+>>>>>>> ec43410... first commit in a while. usually make this message informative
 
 sort country year
 

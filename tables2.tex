@@ -1,0 +1,32 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{center}
+\begin{tabular}{lcccccccc} \hline
+ & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) \\
+ & OLS & OLS & Reduced-Form & Reduced-Form & First Stage & First Stage & IV & IV \\
+VARIABLES & 1-year Lag & 2-year Lag & 1-year Lag & 2-year Lag & 1-year Lag & 2-year Lag & 1-year Lag & 2-year Lag \\ \hline
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+Under 5 Mortality = L, & 0.151*** &  &  &  &  &  & 0.318** & 0.275* \\
+\vspace{4pt} & \begin{footnotesize}(0.0466)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.145)\end{footnotesize} & \begin{footnotesize}(0.150)\end{footnotesize} \\
+Under 5 Mortality = L, &  & 0.148*** &  &  &  &  &  &  \\
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0452)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+Unicef-Reported DTP1 Coverage = L, &  &  & -0.181** &  & -0.513*** &  &  &  \\
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0751)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.158)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+0L.not\_dtp\_covered\#cL.diff\_dtp1coverage &  &  & 0.0859 &  & 0.146 &  &  &  \\
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0519)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.113)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+Unicef-Reported DTP1 Coverage = L, &  &  &  & -0.170** &  & -0.463*** &  &  \\
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0754)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.154)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+0L2.not\_dtp\_covered\#cL2.diff\_dtp1coverage &  &  &  & 0.0630 &  & 0.181* &  &  \\
+ & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0500)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}(0.0972)\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+\vspace{4pt} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} & \begin{footnotesize}\end{footnotesize} \\
+$R^2$ & 0.687 & 0.688 & 0.680 & 0.692 & 0.769 & 0.766 &  &  \\
+Number of pan\_id & 66 & 66 & 65 & 65 & 71 & 71 & 65 & 65 \\
+Country FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+Year FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\
+ Controls & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+\multicolumn{9}{c}{\begin{footnotesize} Robust standard errors in parentheses\end{footnotesize}} \\
+\multicolumn{9}{c}{\begin{footnotesize} *** p$<$0.01, ** p$<$0.05, * p$<$0.1\end{footnotesize}} \\
+\end{tabular}
+\end{center}
+\end{document}

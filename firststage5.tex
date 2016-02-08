@@ -1,0 +1,44 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+          &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+          &\multicolumn{1}{c}{OLS, one year lag}&\multicolumn{1}{c}{OLS, two year lag}&\multicolumn{1}{c}{Reduced-Form, one year lag}&\multicolumn{1}{c}{Reduced-Form, two year lag}&\multicolumn{1}{c}{First Stage, one-year lag}&\multicolumn{1}{c}{First Stage, two-year lag}&\multicolumn{1}{c}{IV, one-year lag}&\multicolumn{1}{c}{IV, two-year lag}\\
+\hline
+L.mortality&    0.151\sym{**} &                  &                  &                  &                  &                  &    0.324\sym{*}  &    0.313         \\
+          & (0.0466)         &                  &                  &                  &                  &                  &  (0.146)         &  (0.179)         \\
+[1em]
+L2.mortality&                  &    0.148\sym{**} &                  &                  &                  &                  &                  &                  \\
+          &                  & (0.0452)         &                  &                  &                  &                  &                  &                  \\
+[1em]
+L.unicefmcv1&                  &                  &   -0.151\sym{*}  &                  &   -0.408\sym{**} &                  &                  &                  \\
+          &                  &                  & (0.0630)         &                  &  (0.128)         &                  &                  &                  \\
+[1em]
+L2.unicefmcv1&                  &                  &                  &   -0.129\sym{*}  &                  &   -0.351\sym{**} &                  &                  \\
+          &                  &                  &                  & (0.0602)         &                  &  (0.126)         &                  &                  \\
+[1em]
+0bL.not\_mcv\_covered#cL.diff\_mcv1coverage&                  &                  &  -0.0976         &                  &    0.202         &                  &                  &                  \\
+          &                  &                  &  (0.139)         &                  &  (0.161)         &                  &                  &                  \\
+[1em]
+1L.not\_mcv\_covered#cL.diff\_mcv1coverage&                  &                  &   0.0674         &                  &    0.113         &                  &                  &                  \\
+          &                  &                  & (0.0390)         &                  & (0.0845)         &                  &                  &                  \\
+[1em]
+0bL2.not\_mcv\_covered#cL2.diff\_mcv1coverage&                  &                  &                  &  -0.0678         &                  &    0.198         &                  &                  \\
+          &                  &                  &                  &  (0.111)         &                  &  (0.167)         &                  &                  \\
+[1em]
+1L2.not\_mcv\_covered#cL2.diff\_mcv1coverage&                  &                  &                  &   0.0902         &                  &    0.146         &                  &                  \\
+          &                  &                  &                  & (0.0486)         &                  & (0.0773)         &                  &                  \\
+[1em]
+\_cons    &    485.2\sym{*}  &    526.6\sym{*}  &    986.5\sym{***}&   1025.8\sym{***}&   2397.7\sym{***}&   2505.8\sym{***}&   -40.12         &    35.17         \\
+          &  (219.0)         &  (214.8)         &  (169.6)         &  (172.7)         &  (433.7)         &  (452.8)         &  (587.5)         &  (709.2)         \\
+[1em]
+rep dummies &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+\(N\)     &      915         &      903         &      872         &      854         &     1770         &     1725         &      854         &      836         \\
+has controls&                  &                  &                  &                  &                  &                  &                  &      Yes         \\
+has Country FE&                  &                  &                  &                  &                  &                  &                  &      Yes         \\
+\hline\hline
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
