@@ -1,26 +1,25 @@
-OLS Estimates					
-		(1)	(2)	(3)	(4)
-		First Stage	First Stage	First Stage	First Stage
-VARIABLES	LABELS	1-year Lag	2-year Lag	5-year Lag	7-year Lag
-					
-L.mortality	Under 5 Mortality = L,	0.151***			
-		(0.0466)			
-loggni	loggni	-0.0173	-0.190	-1.063	-0.794
-		(2.407)	(2.314)	(2.307)	(2.386)
-logpop	Log Population	-30.21**	-32.75**	-45.73***	-43.19***
-		(13.66)	(13.42)	(12.81)	(11.11)
-L2.mortality	Under 5 Mortality = L,		0.148***		
-			(0.0452)		
-L5.mortality	Under 5 Mortality = L,			0.116***	
-				(0.0396)	
-L7.mortality	Under 5 Mortality = L,				0.128***
-					(0.0370)
-					
-Observations		915	903	877	856
-R-squared		0.687	0.688	0.705	0.691
-Number of pan_id		66	66	66	66
-Country FE		Yes	Yes	Yes	Yes
-Year FE		Yes	Yes	Yes	Yes
-Controls		Yes	Yes	Yes	Yes
-Robust standard errors in parentheses					
-*** p<0.01, ** p<0.05, * p<0.1					
+OLS Estimates											
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+VARIABLES	LABELS	1-year Lag	2-year Lag	5-year Lag	5-year Lag	5-year Lag	5-year Lag	7-year Lag	7-year Lag	7-year Lag	7-year Lag
+											
+L.mortality	Under 5 Mortality = L,	0.148***									
+		(0.0479)									
+loggdpcap	loggdpcap	0.596	0.632		-1.172	-0.665	0.560		-1.389	-0.808	0.372
+		(2.111)	(2.083)		(1.452)	(1.404)	(2.016)		(1.450)	(1.394)	(1.986)
+logpop	Log Population	-28.34*	-28.31**		-5.113***	-20.56**	-32.73**		-5.639***	-23.74***	-37.02***
+		(14.20)	(14.11)		(1.863)	(8.748)	(13.29)		(1.774)	(8.181)	(12.11)
+L2.mortality	Under 5 Mortality = L,		0.151***								
+			(0.0472)								
+L5.mortality	Under 5 Mortality = L,			0.267***	0.229***	0.153***	0.142***				
+				(0.0285)	(0.0286)	(0.0489)	(0.0437)				
+L7.mortality	Under 5 Mortality = L,							0.273***	0.228***	0.137***	0.141***
+								(0.0306)	(0.0292)	(0.0480)	(0.0408)
+											
+Observations		900	899	898	898	898	898	893	893	893	893
+R-squared		0.688	0.689	0.594		0.625	0.686	0.575		0.617	0.686
+Number of pan_id		66	66	66	66	66	66	66	66	66	66
+Country FE		Yes	Yes	Yes	No	Yes	Yes	Yes	No	Yes	Yes
+Year FE		Yes	Yes	No	Yes	No	Yes	No	No	No	Yes
+Controls		Yes	Yes	No	Yes	Yes	Yes	No	Yes	Yes	Yes
+Robust standard errors in parentheses											
+*** p<0.01, ** p<0.05, * p<0.1											

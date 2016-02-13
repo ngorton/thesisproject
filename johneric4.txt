@@ -1,24 +1,32 @@
-Dfferences in coverage X uncovered level				
-		(1)	(2)	(3)
-		First Stage	First Stage	IV
-VARIABLES	LABELS	5-year Lag	5-year Lag	5-year Lag
-				
-0bL5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.0526**	-0.0117	
-		(0.0254)	(0.0117)	
-1L5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.00179	1.74e-05	
-		(0.00116)	(0.000603)	
-loggni	loggni	-10.26**	-4.209*	-4.663
-		(4.652)	(2.491)	(3.185)
-logpop	Log Population	-162.9***	-75.15***	-84.75**
-		(30.65)	(10.16)	(33.82)
-L.mortality	Under 5 Mortality = L,			-0.0436
-				(0.143)
-				
-Observations		1,580	802	802
-R-squared		0.755	0.716	
-Number of pan_id		70	65	65
-Country FE		Yes	Yes	Yes
-Year FE		Yes	Yes	Yes
-Controls		Yes	Yes	Yes
-Robust standard errors in parentheses				
-*** p<0.01, ** p<0.05, * p<0.1				
+Dfferences in coverage X uncovered level X Herd Dummy										
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)
+		First Stage	First Stage	First Stage	First Stage	First Stage	First Stage	IV	IV	IV
+VARIABLES	LABELS	5-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag
+										
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.0513**			-0.0148					
+		(0.0247)			(0.0106)					
+1L5.not_mcv_covered#cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.00192*			-5.08e-05					
+		(0.00115)			(0.000620)					
+loggdpcap	loggdpcap	-8.887*	-7.497	-6.040	-3.460	-4.024	-4.399	-3.760	-2.378	-4.406
+		(4.776)	(4.767)	(4.876)	(2.220)	(2.641)	(2.990)	(2.687)	(3.838)	(3.364)
+logpop	Log Population	-160.2***	-164.7***	-175.4***	-73.03***	-75.36***	-73.41***	-81.00**	-30.32	-74.17**
+		(30.82)	(30.93)	(31.72)	(10.25)	(10.05)	(11.69)	(32.27)	(88.91)	(34.61)
+0bL7.not_mcv_covered#cL7.diff_mcv1coverage#cL7.uncoveredmcv1			-0.0565**			-0.00714				
+			(0.0281)			(0.0131)				
+1L7.not_mcv_covered#cL7.diff_mcv1coverage#cL7.uncoveredmcv1			-0.00172*			-0.000366				
+			(0.000970)			(0.000565)				
+0bL10.not_mcv_covered#cL10.diff_mcv1coverage#cL10.uncoveredmcv1							0.0201*			
+							(0.0111)			
+1L10.not_mcv_covered#cL10.diff_mcv1coverage#cL10.uncoveredmcv1							-0.000565			
+							(0.000813)			
+L.mortality	Under 5 Mortality = L,							-0.0364	0.211	-0.00433
+								(0.138)	(0.410)	(0.164)
+										
+Observations		1,580	1,476	1,297	796	762	700	796	762	700
+R-squared		0.753	0.759	0.774	0.720	0.714	0.687			
+Number of pan_id		70	70	69	65	65	65	65	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses										
+*** p<0.01, ** p<0.05, * p<0.1										

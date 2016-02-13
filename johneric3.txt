@@ -1,22 +1,26 @@
-Dfferences in coverage X covered level				
-		(1)	(2)	(3)
-		First Stage	Reduced Firm	IV
-VARIABLES	LABELS	5-year Lag	5-year Lag	2-year Lag
-				
-cL5.diff_mcv1coverage#cL5.unicefmcv1		-0.00153***	-0.000554	
-		(0.000414)	(0.000427)	
-loggni	loggni	-10.18**	-4.170*	-0.634
-		(4.655)	(2.479)	(3.546)
-logpop	Log Population	-162.8***	-74.98***	-8.880
-		(30.67)	(10.12)	(58.33)
-L.mortality	Under 5 Mortality = L,			0.304
-				(0.253)
-				
-Observations		1,580	802	802
-R-squared		0.754	0.716	
-Number of pan_id		70	65	65
-Country FE		Yes	Yes	Yes
-Year FE		Yes	Yes	Yes
-Controls		Yes	Yes	Yes
-Robust standard errors in parentheses				
-*** p<0.01, ** p<0.05, * p<0.1				
+Dfferences in coverage X covered level										
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)
+		First Stage	First Stage	First Stage	Reduced Firm	Reduced Firm	Reduced Firm	IV	IV	IV
+VARIABLES	LABELS	5-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag
+										
+cL5.diff_mcv1coverage#cL5.unicefmcv1		-0.00161***			-0.000586					
+		(0.000404)			(0.000441)					
+loggdpcap	loggdpcap	-8.826*	-7.478	-6.001	-3.439	-4.037	-4.363	-0.402	-1.880	-3.912
+		(4.797)	(4.777)	(4.891)	(2.205)	(2.635)	(2.983)	(2.934)	(3.105)	(3.064)
+logpop	Log Population	-160.2***	-164.3***	-175.2***	-72.96***	-75.44***	-73.31***	-8.484	-16.71	-61.31*
+		(30.84)	(30.89)	(31.81)	(10.22)	(10.07)	(11.75)	(55.01)	(62.11)	(32.83)
+cL10.diff_mcv1coverage#cL10.unicefmcv1				-0.00117**			0.000121			
+				(0.000495)			(0.000398)			
+cL7.diff_mcv1coverage#cL7.unicefmcv1						-0.000249				
+						(0.000328)				
+L.mortality	Under 5 Mortality = L,							0.301	0.274	0.0603
+								(0.241)	(0.282)	(0.154)
+										
+Observations		1,580	1,476	1,297	796	762	700	796	762	700
+R-squared		0.753	0.758	0.774	0.720	0.714	0.686			
+Number of pan_id		70	70	69	65	65	65	65	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses										
+*** p<0.01, ** p<0.05, * p<0.1										

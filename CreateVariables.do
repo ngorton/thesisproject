@@ -2,17 +2,11 @@
 use completedata, clear
 
 *to determine if country is missing all vaccine data*
-egen sum_measlesvacc=rowtotal(countrymcv2 countrymcv1 unicefmcv2 unicefmcv1)
-egen sum_dtpvacc=rowtotal(countrydtp3 countrydtp1 unicefdtp3 unicefdtp1)
-<<<<<<< HEAD
-=======
-egen sum_schooling=rowtotal(rateofoutofschoolF rateofoutofschoolM rateofoutofschoolMF)
->>>>>>> ec43410... first commit in a while. usually make this message informative
 
 *does the country have sufficient data? 1 if yes*
 drop if missing(country)
 gen in_sample = 1
-replace in_sample = 0 if(sum_dtpvacc == 0 & sum_measlesvacc == 0)
+*replace in_sample = 0 if(sum_dtpvacc == 0 & sum_measlesvacc == 0)
 
 *generate factor variables for fixed effects*
 *drop if missing(lp)
@@ -53,11 +47,11 @@ replace category = "lowmiddle" if lowmid == 1
 replace category = "uppermiddle" if upmid == 1
 replace category = "high" if high == 1
 
-<<<<<<< HEAD
+
 *GAVI Eligible in 2000?*
 gen gavi_status = 0
 replace gavi_status = 1 if ave_gni < 1580
-=======
+
 *GAVI Eligible in 2015?*
 xtset 
 
@@ -75,7 +69,6 @@ replace gavi_status_00 = 1 if country == "Timor-Leste"
 replace gavi_status_00 = 0 if code == "SYR"
 replace gavi_status_00 = 0 if code == "SYR"
 replace gavi_status_00 = 0 if code == "PHL"
->>>>>>> ec43410... first commit in a while. usually make this message informative
 
 
 *create log levels of variables*
@@ -119,13 +112,13 @@ gen dtp_fatality_rate = 0.2 + est_pertussis_fatality_rate + est_tetanus_fatality
 
 gen preventable_deaths = measles_deaths + dtp_deaths
 
-egen mean_measles_rate = mean(measles_fatality_rate)
-gen estimated_measles_deaths = mean_measles_rate*measles_cases
+*egen mean_measles_rate = mean(measles_fatality_rate)
+*gen estimated_measles_deaths = mean_measles_rate*measles_cases
 
-egen mean_dtp_rate = mean(dtp_fatality_rate)
-gen estimated_dtp_deaths = mean_dtp_rate*dtp_cases
+*egen mean_dtp_rate = mean(dtp_fatality_rate)
+*gen estimated_dtp_deaths = mean_dtp_rate*dtp_cases
 
-gen estimated_preventable_deaths = estimated_measles_deaths + estimated_dtp_deaths
+*gen estimated_preventable_deaths = estimated_measles_deaths + estimated_dtp_deaths
 
 
 *scale death numbers based on size of young population*
@@ -141,15 +134,9 @@ by code year: gen measles_treated = 0 if !missing(unicefmcv1)
 replace measles_treated = 1 if unicefmcv1 > 89
 
 by code year: gen dtp_treated = 0 if !missing(unicefmcv1)
-<<<<<<< HEAD
 replace dtp_treated = 1 if unicefdtp1 > 84
-=======
+
 replace dtp_treated = 1 if unicefdtp1 > 80
-
-sort category year
-by category year: egen est_sum_cases = sum(estimated_measles_deaths)
-by category year: egen est_avg_coverage = mean(unicefmcv1)
-
 
 *Variables for regressions*
 
@@ -172,9 +159,6 @@ gen dtp_covered = 0
 replace dtp_covered = 1 if unicefdtp1 > 83
 
 gen mortality_10000 = mortality*10
-
-gen inter_rateofoutofschoolM = rateofoutofschoolM
-if missing(rateofoutofschoolM) replace inter_rateofoutofschoolM = l10.lu
 
 destring vaxspending, replace ignore("%")
 tabulate natlbudget, gen(natl_spending)
@@ -214,14 +198,35 @@ egen mean2000 = mean(mortality) if yr41 == 1
 
 gen long_change = mean2000 - mean1960
 
->>>>>>> ec43410... first commit in a while. usually make this message informative
+rename rateofoutofschoolmf rateofoutofschoolMF
+rename rateofoutofschoolm rateofoutofschoolM
 
+gen child_mort_WB = mortality - infantmort
+
+gen interpolated_mort = mortality if missing(mean_mort)
+replace interpolated_mort = meanmort if !missing(mean_mort)
+
+* THE MAMA ASSUMPTION * 
+
+* Create a variable based on whether or not a country will ever reach herd immunity*
+bysort code: egen max_mcv1_coverage = max(unicefmcv1)
+by code: gen dummy_ever_covered_mcv1 = 1 if max_mcv1_coverage > 89
+by code: replace dummy_ever_covered_mcv1 = 0 if max_mcv1_coverage <= 89
+
+* Create a variable based on whether a country has reached herd immunity in a given year*
+sort code year
+by code year: gen covered_mcv1_t = (unicefmcv1 > 89)
+by code year: replace covered_mcv1_t = 0 if missing(unicefmcv1)
+
+sort code year
+by code year: gen presence_mcv1_t = (unicefmcv1 > 50)
+by code year: replace presence_mcv1_t = 0 if missing(unicefmcv1)
 
 *label all variables*
 label variable not_mcv_covered "Dummy for Not Measles Herd Immune"
 label variable not_dtp_covered "Dummy for Not DTP Herd Immune"
 
-label variable measles_prcnt_under5 "Percentage of Measles Cases in under 5 Population"                          yr41
+label variable measles_prcnt_under5 "Percentage of Measles Cases in under 5 Population"                          
 label variable dtp_prcnt_under5 "Percentage of DTP Cases in under 5 Population"
 
 label variable under5pop_total "Number of Children under 5"
@@ -265,7 +270,6 @@ label variable pop "Population"
 label variable logmortality "Log Childhood Mortality"
 label variable logpop "Log Population"
 label variable gni "GNI per Capita"
-label variable gavi_status2 "Eligible for GAVI support"
 label variable youngpop "Population under 14"
 label variable sd_years_total "Standard Deviation of Years of Schooling, by country"
 label variable sd_years_primary "Standard Deviation of Primary Schooling, by country"

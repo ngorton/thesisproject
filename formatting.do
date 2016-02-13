@@ -123,11 +123,28 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save population, replace
 clear
 
+insheet using infantmort.csv, comma names
+reshape long infantmort, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+save infantmort, replace
+clear
+
 insheet using population_under14percenttotal.csv, comma names
 reshape long under14pop, i(iso_code) j(year)
 replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
 save under14pop, replace
+clear
+
+insheet using unesco.csv, comma names
+save unesco, replace
+clear
+
+insheet using unescoM.csv, comma names
+drop if missing(rateofoutofschoolm)
+save unescoM, replace
+
 clear
 
 insheet using mortality_before1980.csv, comma names
@@ -145,11 +162,16 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save healthcarepercapita, replace
 
 clear
+
 insheet using under5pop.csv, comma names
 reshape long under5pop, i(iso_code) j(year)
 save under5pop, replace
 
 clear
+
+insheet using WHOchild_mort.csv, comma names
+drop if missing(iso_code)
+save WHOchild_mort, replace
 
 *NEED TO REDOWNLOAD MORTALITY DATA* 
 *insheet using under5mortality_complete.csv, comma names
@@ -167,6 +189,9 @@ save measles_details, replace
 use countryreportedDTP1
 
 merge 1:1 iso_code year using countryreportedDTP3
+drop _merge
+
+merge 1:1 iso_code year using WHOchild_mort
 drop _merge
 
 merge 1:1 iso_code year using under5pop
@@ -221,15 +246,21 @@ drop _merge
 merge 1:1 iso_code year using gdpcap
 drop _merge
 
-<<<<<<< HEAD
-=======
 merge 1:1 iso_code year using schooling_formatted
 drop _merge
 
 merge 1:1 iso_code year using oldmort
 drop _merge
 
->>>>>>> ec43410... first commit in a while. usually make this message informative
+merge 1:1 iso_code year using unesco
+drop _merge
+
+merge 1:1 iso_code year using unescoM
+drop _merge
+
+merge 1:1 iso_code year using infantmort
+drop _merge
+
 save master, replace
 
 clear
@@ -262,7 +293,6 @@ drop _merge
 *GNI per capita, constant 2005 USD*
 merge 1:1 iso_code year using gnipercap
 drop _merge
-<<<<<<< HEAD
 
 merge m:1 iso_code using measles_details
 
@@ -277,9 +307,7 @@ rename iso_code code
 
 drop gavi_mcv2
 drop gavi_status2
-=======
-rename iso_code code
->>>>>>> ec43410... first commit in a while. usually make this message informative
+
 
 sort country year
 

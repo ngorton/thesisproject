@@ -3,19 +3,19 @@ Dfferences in coverage X Herd Dummy
 		First Stage	Reduced Form	IV
 VARIABLES	LABELS	5-year Lag	5-year Lag	5-year Lag
 				
-0bL5.not_mcv_covered#cL5.diff_mcv1coverage		-0.242	-0.0870	
-		(0.154)	(0.0760)	
-1L5.not_mcv_covered#cL5.diff_mcv1coverage		-0.0899**	-0.0182	
-		(0.0351)	(0.0307)	
-loggni	loggni	-10.23**	-4.198*	-3.533
-		(4.663)	(2.487)	(3.048)
-logpop	Log Population	-162.9***	-75.04***	-63.47*
-		(30.66)	(10.16)	(38.34)
-L.mortality	Under 5 Mortality = L,			0.0539
-				(0.166)
+0bL5.not_mcv_covered#cL5.diff_mcv1coverage		-0.240	-0.0999	
+		(0.153)	(0.0744)	
+1L5.not_mcv_covered#cL5.diff_mcv1coverage		-0.0965***	-0.0201	
+		(0.0342)	(0.0315)	
+loggdpcap	loggdpcap	-8.881*	-3.466	-2.820
+		(4.797)	(2.217)	(2.576)
+logpop	Log Population	-160.2***	-72.99***	-60.70
+		(30.82)	(10.26)	(37.04)
+L.mortality	Under 5 Mortality = L,			0.0580
+				(0.163)
 				
-Observations		1,580	802	802
-R-squared		0.754	0.716	
+Observations		1,580	796	796
+R-squared		0.753	0.720	
 Number of pan_id		70	65	65
 Country FE		Yes	Yes	Yes
 Year FE		Yes	Yes	Yes

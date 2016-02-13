@@ -1,22 +1,28 @@
-Dfferences in coverage X uncovered level				
-		(1)	(2)	(3)
-		First Stage	Reduced Form	IV
-VARIABLES	LABELS	5-year Lag	5-year Lag	5-year Lag
-				
-cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.00188	6.08e-06	
-		(0.00119)	(0.000600)	
-loggni	loggni	-10.30**	-4.159*	-4.176
-		(4.662)	(2.486)	(3.093)
-logpop	Log Population	-163.0***	-75.24***	-75.57**
-		(30.63)	(10.08)	(35.03)
-L.mortality	Under 5 Mortality = L,			-0.00151
-				(0.149)
-				
-Observations		1,580	802	802
-R-squared		0.754	0.716	
-Number of pan_id		70	65	65
-Country FE		Yes	Yes	Yes
-Year FE		Yes	Yes	Yes
-Controls		Yes	Yes	Yes
-Robust standard errors in parentheses				
-*** p<0.01, ** p<0.05, * p<0.1				
+Dfferences in coverage X uncovered level											
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
+		First Stage	First Stage	First Stage	First Stage	Reduced Form	Reduced Form	Reduced Form	IV	IV	IV
+VARIABLES	LABELS	5-year Lag	6-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag	5-year Lag	7-year Lag	10-year Lag
+											
+cL5.diff_mcv1coverage#cL5.uncoveredmcv1		-0.00201*				-6.25e-05					
+		(0.00118)				(0.000617)					
+loggdpcap	loggdpcap	-8.962*	-8.082*	-7.521	-6.066	-3.398	-4.035	-4.417	-3.250	-4.378	-5.022
+		(4.798)	(4.774)	(4.777)	(4.881)	(2.212)	(2.637)	(2.994)	(2.567)	(8.573)	(3.897)
+logpop	Log Population	-160.4***	-162.7***	-164.6***	-175.3***	-73.16***	-75.44***	-73.33***	-69.99**	-84.91	-90.22*
+		(30.79)	(30.87)	(30.92)	(31.78)	(10.17)	(10.02)	(11.76)	(34.19)	(237.1)	(49.37)
+cL6.diff_mcv1coverage#cL6.uncoveredmcv1			-0.00180								
+			(0.00112)								
+cL7.diff_mcv1coverage#cL7.uncoveredmcv1				-0.00181*			-0.000379				
+				(0.001000)			(0.000559)				
+cL10.diff_mcv1coverage#cL10.uncoveredmcv1					-0.00144			-0.000482			
+					(0.000905)			(0.000798)			
+L.mortality	Under 5 Mortality = L,								0.0149	-0.0436	-0.0849
+									(0.149)	(1.099)	(0.230)
+											
+Observations		1,580	1,529	1,476	1,297	796	762	700	796	762	700
+R-squared		0.753	0.755	0.758	0.773	0.719	0.714	0.686			
+Number of pan_id		70	70	70	69	65	65	65	65	65	65
+Country FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Year FE		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Controls		Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+Robust standard errors in parentheses											
+*** p<0.01, ** p<0.05, * p<0.1											

@@ -15,7 +15,7 @@ country.mat <- matrix(nrow = length(mortality.vector), ncol = 15)
     #country.gdpscale <- abs(rnorm(1, mean = 0.05, sd = 0.05))
     
    # prob.child.death <- abs(mortality.vector[j]-country.gdpscale)
-    prob.child.death <- 1-mortality.vector[j]
+    prob.child.death <- mortality.vector[j]
     prob.young.death <- 0.2
     childhood <- 10
     life.expect <- 70
