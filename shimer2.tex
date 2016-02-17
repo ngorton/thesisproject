@@ -1,0 +1,28 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{tabular}{lcccccc}
+\multicolumn{7}{c}{Coverage level} \\ \hline
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+ & First Stage & First Stage & Reduced Form & Reduced Form & IV & IV \\
+VARIABLES & 1-year Lag & 2-year Lag & 1-year Lag & 2-year Lag & 1-year Lag & 2-year Lag \\ \hline
+ &  &  &  &  &  &  \\
+Unicef-Reported MCV1 Coverage = L, & -0.395*** &  & -0.152** &  &  &  \\
+ & (0.118) &  & (0.0579) &  &  &  \\
+Unicef-Reported MCV1 Coverage = L, &  & -0.336*** &  & -0.132** &  &  \\
+ &  & (0.117) &  & (0.0534) &  &  \\
+Under 5 Mortality = L, &  &  &  &  & 0.338** &  \\
+ &  &  &  &  & (0.134) &  \\
+Under 5 Mortality = L, &  &  &  &  &  & 0.350** \\
+ &  &  &  &  &  & (0.145) \\
+ &  &  &  &  &  &  \\
+Observations & 1,814 & 1,770 & 881 & 866 & 865 & 847 \\
+R-squared & 0.765 & 0.760 & 0.679 & 0.684 &  &  \\
+Number of pan\_id & 71 & 71 & 65 & 65 & 65 & 65 \\
+Country FE & Yes & Yes & Yes & Yes & Yes & Yes \\
+Year FE & Yes & Yes & Yes & Yes & Yes & Yes \\
+ Controls & Yes & Yes & Yes & Yes & Yes & Yes \\ \hline
+\multicolumn{7}{c}{ Robust standard errors in parentheses} \\
+\multicolumn{7}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{document}

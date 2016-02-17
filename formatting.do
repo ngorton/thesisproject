@@ -123,6 +123,13 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save population, replace
 clear
 
+insheet using deathrate.csv, comma names
+reshape long death, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+save death, replace
+clear
+
 insheet using infantmort.csv, comma names
 reshape long infantmort, i(iso_code) j(year)
 replace iso_code = "ROU" if (iso_code == "ROM")
@@ -228,6 +235,10 @@ merge 1:1 iso_code year using unicefestimatedPol3
 drop _merge
 
 merge 1:1 iso_code year using population
+keep if _merge == 3
+drop _merge
+
+merge 1:1 iso_code year using deathrate
 keep if _merge == 3
 drop _merge
 

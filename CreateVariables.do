@@ -4,19 +4,21 @@ use completedata, clear
 *to determine if country is missing all vaccine data*
 
 *does the country have sufficient data? 1 if yes*
-drop if missing(country)
+drop if missing(country) | year < 1980
+replace unicefmcv1 = 0 if missing(unicefmcv1)
 gen in_sample = 1
-*replace in_sample = 0 if(sum_dtpvacc == 0 & sum_measlesvacc == 0)
+replace in_sample = 0 if missing(unicefmcv1) | missing(rateofoutofschoolmf)
 
 *generate factor variables for fixed effects*
 *drop if missing(lp)
 tabulate code, gen(pan_id) 
-tabulate year, gen(yr) 
+tabulate year, gen(yr)     
 
 *set up panel*
 encode code, gen(pan_id)
 tsset pan_id year
 xtset
+
 *average GNI*
 replace in_sample = 0 if missing(gni)
 
@@ -165,7 +167,7 @@ tabulate natlbudget, gen(natl_spending)
  
 drop natl_spending1 
 generate budget_dummy = 0
-replace budget_dummy = 1 if natl_spending3 == 1 | natl_spending4 == 1
+*replace budget_dummy = 1 if natl_spending3 == 1 | natl_spending4 == 1
 
 gen diff_spending = D.vaxspending
 
@@ -193,11 +195,6 @@ bysort code: gen perm_herd_status = 1 if mean_country_mcv1 > 84
 bysort code: replace perm_herd_status = 0 if mean_country_mcv1 <= 84
 bysort year gavi_status_00 perm_herd_status: egen meanmort = mean(mortality)
 
-egen mean1960 = mean(mortality) if yr1 == 1 
-egen mean2000 = mean(mortality) if yr41 == 1
-
-gen long_change = mean2000 - mean1960
-
 rename rateofoutofschoolmf rateofoutofschoolMF
 rename rateofoutofschoolm rateofoutofschoolM
 
@@ -221,6 +218,15 @@ by code year: replace covered_mcv1_t = 0 if missing(unicefmcv1)
 sort code year
 by code year: gen presence_mcv1_t = (unicefmcv1 > 50)
 by code year: replace presence_mcv1_t = 0 if missing(unicefmcv1)
+
+bysort code year: gen presence_mcv1_t0 = (unicefmcv1 > 5)
+bysort code year: replace presence_mcv1_t0 = 0 if (unicefmcv1 <= 5)
+
+* Calculate Survival Rate * 
+gen mortality_perc = mortality/1000 * 100 
+gen survival_rate = 100 - mortality_perc
+
+*replace unicefmcv1 = 0 if missing(unicefmcv1)
 
 *label all variables*
 label variable not_mcv_covered "Dummy for Not Measles Herd Immune"

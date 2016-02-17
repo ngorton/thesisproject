@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Nicole Gorton</LastAuthor>
+  <LastPrinted>2016-02-09T16:14:56Z</LastPrinted>
+  <Created>2016-02-09T01:46:40Z</Created>
+  <LastSaved>2016-02-09T01:46:40Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>6240</WindowHeight>
+  <WindowWidth>20740</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>140</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Font ss:FontName="Calibri" ss:Size="12" ss:Bold="1"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s63">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s65">
+   <Borders/>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s67">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+  </Style>
+  <Style ss:ID="s68">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s69">
+   <Font ss:FontName="Calibri"/>
+   <NumberFormat/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="25" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="14">
+   <Column ss:AutoFitWidth="0" ss:Width="244"/>
+   <Column ss:AutoFitWidth="0" ss:Width="58" ss:Span="2"/>
+   <Row ss:AutoFitHeight="0"/>
+   <Row ss:AutoFitHeight="0" ss:Height="15">
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Dfferences in coverage X Herd Dummy</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s63"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(1)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(2)</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">(3)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">First Stage</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Reduced Form</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">IV</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">VARIABLES</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">5-year Lag</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">5-year Lag</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">5-year Lag</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s63"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">0bL5.not_mcv_covered#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-0.240</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-0.0999</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(0.153)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(0.0744)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">1L5.not_mcv_covered#cL5.diff_mcv1coverage</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-0.0965***</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-0.0201</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(0.0342)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(0.0315)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">loggdpcap</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-8.881*</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-3.466</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-2.820</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(4.797)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(2.217)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(2.576)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Log Population</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-160.2***</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-72.99***</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">-60.70</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(30.82)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(10.26)</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(37.04)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Under 5 Mortality = L,</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0.0580</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">(0.163)</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Observations</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">1,580</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">796</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">796</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">R-squared</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0.753</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">0.720</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Number of pan_id</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">70</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">65</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">65</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Country FE</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Year FE</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Controls</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">Robust standard errors in parentheses</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">*** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>14</ActiveRow>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+   <x:ProtectedObjects>False</x:ProtectedObjects>
+   <x:ProtectedScenarios>False</x:ProtectedScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
