@@ -36,28 +36,47 @@ gavi00.school <- ggplot(na.omit(gavi00.year.schoolingM), aes(x = Group.1, y = x)
 
 
 gavi00.year.measlescases <- aggregate(gavi00$measles_cases, by=list(gavi00$year), 
-                                      FUN=mean, na.rm=TRUE)
+                                      FUN=sum, na.rm=TRUE)
 
 data.year.measlescases.sum <- aggregate(data$measles_cases, by=list(data$year), 
                                         FUN=sum, na.rm=TRUE)
 
 data.year.mcv1 <- na.omit(aggregate(data$unicefmcv1, by=list(data$year), 
                                     FUN=mean, na.rm=TRUE))
+mean.coverage <- ggplot(data.year.mcv1, aes(x = Group.1, y = x))+ geom_line()
+
+# Measles Cases, All Countries -- yearly totals
 
 total.measlescases <- ggplot(data.year.measlescases.sum, aes(x = Group.1, y =x)) + geom_bar(stat = "identity") + xlim(1980,2013) +xlab("Year")+ylab("Number of Measles Cases") + theme_bw()
 
-average.cov <- ggplot() + geom_line(data = data.year.mcv1, aes(x = data.year.mcv1$Group.1, y = data.year.mcv1$x)) + geom_line(data = data.year.mcv1, aes(x = data.year.mcv1$Group.1, y = data.year.mcv1$x))
+# Measles Cases, GAVI Countries -- yearly totals
 
 gavi00.measlescases <- ggplot(na.omit(gavi00.year.measlescases), aes(x = Group.1, y = x)) +                    # basic graphical object
   geom_line(colour="green") + labs(x = "Year", y = "Measles Cases (Count)") + 
-  ggtitle("Schooling Trends Over Time, Poor Countries") + theme_bw()
+  ggtitle("Measles Cases, GAVI-Countries") + theme_bw() + xlim(1980,2014)
 
 
 gavi00.year.spending <- na.omit(aggregate(as.numeric(gavi00$vaxspending), by=list(gavi00$year), 
                                           FUN=mean, na.rm=TRUE))
 
-gavi00.diff.mort <- ggplot(gavi00, aes(x = diff_mcv1coverage, y = diff_cases)) +                    # basic graphical object
-  geom_point() + labs(x = "Change in Coverage", y = "Change in Mortality") + 
+# Takes means of change in coverage and mortality
+gavi00.diff.mort.means <- aggregate(as.numeric(gavi00$diff_mortality), by=list(gavi00$year), 
+                                          FUN=mean, na.rm=TRUE)
+
+gavi00.diff.cov.means <- aggregate(as.numeric(gavi00$diff_mcv1coverage), by=list(gavi00$year), 
+                                            FUN=mean, na.rm=TRUE)
+
+# put 'em together and rename columns
+
+diff.means <- cbind(gavi00.diff.mort.means, gavi00.diff.cov.means )
+names(diff.means)[1] <- c()
+
+# Plot means of changes in coverage and mortality
+
+gavi00.diff.mort <- ggplot() +                    # basic graphical object
+  geom_point(data = gavi00.diff.cov.means, aes(x = Group.1, y = x)) +
+  geom_point(data = gavi00.diff.mort.means, aes(x = Group.1, y = x)) + 
+  labs(x = "Change in Coverage", y = "Change in Mortality") + 
   ggtitle("") + theme_bw()
 
 gavi00.year.meanmcv1cov <- aggregate(gavi00$diff_mcv1coverage, by=list(gavi00$year), 
@@ -73,7 +92,7 @@ gavi00.coverage.mortality <- ggplot(gavi00, aes(x = Group.1, y = x)) +          
   geom_line(colour="green") + labs(x = "Year", y = "Percentage of Immunization Costs \n Covered by National Government") + 
   ggtitle("") + theme_bw()
 
-
+# Plot Costs Covered by National Governments, Non-GAVI-Eligible 
 no.gavi00.year.spending <- na.omit(aggregate(no.gavi00$vaxspending, by=list(no.gavi00$year), 
                                              FUN=mean, na.rm=TRUE))
 
@@ -102,7 +121,7 @@ names(means)[3] <- c("code")
 names(means)[4] <- c("school")
 
 # Plot averages of schooling and mortality
-school.mortality.means <- ggplot(data = means, aes(x =school, y = mort, label = code)) + theme_bw()+xlab("Child Mortality, out of 1000 Live Births")+ylab("Rate of Children Out of School")
+school.mortality.means <- ggplot(data = means, aes(x =school, y = , label = code)) + theme_bw()+xlab("Child Mortality, out of 1000 Live Births")+ylab("Rate of Children Out of School")
 school.mortality.means + geom_text(check_overlap = TRUE) + stat_smooth()
 
 # Raw data -- mortality and schooling rates 
@@ -114,10 +133,10 @@ vaccine.mortality <-ggplot(data = gavi00, x = unicefmcv1, y = mortality)
 vaccine.budget.coverage <- 
   geom_line(data=gavi00.year.spending, aes(x=Group.1, y=x, color = "spending")) + 
   geom_line(data=gavi00.year.mcv1, aes(x=Group.1, y=x, color = "coverage")) + ggtitle("Average Vaccine Costs and MCV1 Coverage \n GAVI-Supported Countries") + xlim(1998, 2014) + xlab("Year")+ ylab("Percentage")+ scale_colour_manual("", 
-                                                                                                                                                                                                                                        breaks = c("Percentage of Costs Covered", "MCV1 Coverage"),
-                                                                                                                                                                                                                                        values = c("black", "blue"), guide = guide_legend()) +theme_bw() +   theme(legend.position = "bottom") 
+                                                                                                                                                                                                                                        breaks = c("Percentage of Costs Covered", "MCV1 Coverage"))
 
-vaccine.budget.coverage
+# Plot vaccine spending for GAVI and non GAVI countries 
+
 vaccine.budget <- ggplot() +
   geom_line(data=gavi00.year.spending, aes(x=Group.1, y=x),
             colour="blue") + 
@@ -127,6 +146,8 @@ vaccine.budget <- ggplot() +
 
 gavi00.schooling <- na.omit(aggregate(gavi00$rateofoutofschoolMF, by=list(gavi00$year), 
                                       FUN=mean, na.rm=TRUE))
+
+# Covered with measles vaccine subsets
 
 gavi.sub.covered <- subset(gavi00, mcv_covered == 1)
 gavi.sub.notcovered <- subset(gavi00, mcv_covered == 0)

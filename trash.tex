@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+            &\multicolumn{1}{c}{survival\_rate}&\multicolumn{1}{c}{survival\_rate}\\
+\hline
+intervention\_year\_dummy&       1.127         &       0.631         \\
+            &      (1.67)         &      (1.03)         \\
+[1em]
+loggdpcap   &       0.227         &       1.374\sym{*}  \\
+            &      (0.34)         &      (2.26)         \\
+[1em]
+\_cons      &      -46.94         &       6.195         \\
+            &     (-1.36)         &      (0.15)         \\
+[1em]
+years       &         Yes         &         Yes         \\
+[1em]
+controls    &         Yes         &         Yes         \\
+\hline
+\(N\)       &         180         &         165         \\
+\hline\hline
+\multicolumn{3}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

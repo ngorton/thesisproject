@@ -1,32 +1,30 @@
-\documentclass[]{article}
-\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
-\begin{document}
-\begin{tabular}{lcccc}
-\multicolumn{5}{c}{OLS Estimates} \\ \hline
- & (1) & (2) & (3) & (4) \\
- & First Stage & First Stage & First Stage & First Stage \\
-VARIABLES & 1-year Lag & 2-year Lag & 5-year Lag & 7-year Lag \\ \hline
- &  &  &  &  \\
-Under 5 Mortality = L, & 0.151*** &  &  &  \\
- & (0.0466) &  &  &  \\
-loggni & -0.0173 & -0.190 & -1.063 & -0.794 \\
- & (2.407) & (2.314) & (2.307) & (2.386) \\
-Log Population & -30.21** & -32.75** & -45.73*** & -43.19*** \\
- & (13.66) & (13.42) & (12.81) & (11.11) \\
-Under 5 Mortality = L, &  & 0.148*** &  &  \\
- &  & (0.0452) &  &  \\
-Under 5 Mortality = L, &  &  & 0.116*** &  \\
- &  &  & (0.0396) &  \\
-Under 5 Mortality = L, &  &  &  & 0.128*** \\
- &  &  &  & (0.0370) \\
- &  &  &  &  \\
-Observations & 915 & 903 & 877 & 856 \\
-R-squared & 0.687 & 0.688 & 0.705 & 0.691 \\
-Number of pan\_id & 66 & 66 & 66 & 66 \\
-Country FE & Yes & Yes & Yes & Yes \\
-Year FE & Yes & Yes & Yes & Yes \\
- Controls & Yes & Yes & Yes & Yes \\ \hline
-\multicolumn{5}{c}{ Robust standard errors in parentheses} \\
-\multicolumn{5}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS Estimates}
+\begin{tabular}{l*{5}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{1-yr, All}&\multicolumn{1}{c}{5-yr, All}&\multicolumn{1}{c}{1-yr, GAVI}&\multicolumn{1}{c}{5-yr, GAVI}&\multicolumn{1}{c}{10-yr, GAVI}\\
+\hline
+L.survival\_rate &   -1.813\sym{***}&                  &   -1.607\sym{**} &                  &                  \\
+                &  (0.287)         &                  &  (0.482)         &                  &                  \\
+[1em]
+L5.survival\_rate&                  &   -1.672\sym{***}&                  &   -1.547\sym{***}&                  \\
+                &                  &  (0.283)         &                  &  (0.419)         &                  \\
+[1em]
+L10.survival\_rate&                  &                  &                  &                  &   -1.363\sym{**} \\
+                &                  &                  &                  &                  &  (0.397)         \\
+[1em]
+loggdpcap       &  -0.0229         &   0.0777         &    0.904         &    0.916         &   -0.897         \\
+                &  (1.511)         &  (1.447)         &  (2.174)         &  (2.039)         &  (1.770)         \\
+[1em]
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+[1em]
+Controls        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &     2826         &     2818         &      888         &      886         &      843         \\
+\(R^{2}\)       &    0.536         &    0.531         &    0.685         &    0.685         &    0.703         \\
+\hline\hline
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
-\end{document}
+\end{table}

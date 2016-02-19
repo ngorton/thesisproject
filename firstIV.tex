@@ -1,0 +1,36 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Primary Specification}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{IV}\\
+\midrule
+Unicef-Reported MCV1 Coverage&   0.0199         &                  &                  &                  &                  &                  \\
+                & (0.0112)         &                  &                  &                  &                  &                  \\
+\addlinespace
+L.Unicef-Reported MCV1 Coverage&   0.0244\sym{*}  &   0.0334\sym{*}  &   -0.121\sym{*}  &                  &                  &                  \\
+                & (0.0106)         & (0.0139)         & (0.0562)         &                  &                  &                  \\
+\addlinespace
+L2.Unicef-Reported MCV1 Coverage&                  &  0.00512         &                  &   -0.101\sym{*}  &                  &                  \\
+                &                  &(0.00614)         &                  & (0.0482)         &                  &                  \\
+\addlinespace
+loggdpcap       &    0.483         &    0.523         &    0.280         &   0.0699         &    2.264         &    1.708         \\
+                &  (0.528)         &  (0.520)         &  (2.247)         &  (2.295)         &  (1.197)         &  (1.302)         \\
+\addlinespace
+L.survival\_rate &                  &                  &                  &                  &   -3.392\sym{***}&                  \\
+                &                  &                  &                  &                  &  (0.754)         &                  \\
+\addlinespace
+L2.survival\_rate&                  &                  &                  &                  &                  &   -2.637\sym{*}  \\
+                &                  &                  &                  &                  &                  &  (1.096)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Controls        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      888         &      888         &      893         &      893         &      888         &      887         \\
+\(R^{2}\)       &    0.825         &    0.823         &    0.653         &    0.650         &                  &                  \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

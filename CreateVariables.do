@@ -4,7 +4,7 @@ use completedata, clear
 *to determine if country is missing all vaccine data*
 
 *does the country have sufficient data? 1 if yes*
-drop if missing(country) | year < 1980
+drop if missing(country) 
 replace unicefmcv1 = 0 if missing(unicefmcv1)
 gen in_sample = 1
 replace in_sample = 0 if missing(unicefmcv1) | missing(rateofoutofschoolmf)
@@ -16,8 +16,10 @@ tabulate year, gen(yr)
 
 *set up panel*
 encode code, gen(pan_id)
-tsset pan_id year
-xtset
+drop if pan_id==.
+
+sort pan_id year
+xtset pan_id year
 
 *average GNI*
 replace in_sample = 0 if missing(gni)
@@ -221,6 +223,22 @@ by code year: replace presence_mcv1_t = 0 if missing(unicefmcv1)
 
 bysort code year: gen presence_mcv1_t0 = (unicefmcv1 > 5)
 bysort code year: replace presence_mcv1_t0 = 0 if (unicefmcv1 <= 5)
+
+by code year: gen presence_mcv1_herd = (unicefmcv1 > 90)
+by code year: replace presence_mcv1_herd = 0 if missing(unicefmcv1)
+
+bysort code year: gen intervention_year = year if (unicefmcv1 > 50) & year > 1980
+bysort code year: replace intervention_year = 1974 if (unicefmcv1 > 50) & year == 1980
+
+bysort code year: gen intervention_year_dummy = 1 if !missing(intervention_year)
+bysort code year: replace intervention_year_dummy = 0 if missing(intervention_year) & !missing(unicefmcv1)
+
+bysort code year: gen intervention_year_DTP = year if (unicefdtp1 > 50) & year > 1980
+bysort code year: replace intervention_year_DTP = 1974 if (unicefdtp1 > 50) & year == 1980
+
+bysort code year: gen intervention_year_dummy_DTP = 1 if !missing(intervention_year_DTP)
+bysort code year: replace intervention_year_dummy_DTP = 0 if missing(intervention_year_DTP) & !missing(unicefdtp1)
+
 
 * Calculate Survival Rate * 
 gen mortality_perc = mortality/1000 * 100 

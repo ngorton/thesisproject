@@ -238,7 +238,7 @@ merge 1:1 iso_code year using population
 keep if _merge == 3
 drop _merge
 
-merge 1:1 iso_code year using deathrate
+merge 1:1 iso_code year using death
 keep if _merge == 3
 drop _merge
 
@@ -319,7 +319,9 @@ rename iso_code code
 drop gavi_mcv2
 drop gavi_status2
 
+merge 1:1 code year using SIA
+drop _merge
 
-sort country year
+replace SIA = 0 if missing(SIA)
 
 save completedata, replace

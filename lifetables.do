@@ -114,8 +114,4 @@ drop dup
 replace code = "TMP" if code == "TLS"
 replace code = "ADO" if code == "AND"
 
-
-
-
-
 save youngmort_WHO, replace 

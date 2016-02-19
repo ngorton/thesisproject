@@ -1,0 +1,26 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Autocorrelation}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{OLS}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{FS}\\
+\midrule
+survival\_rate   &   -1.678\sym{***}&                  &                  \\
+                &  (0.272)         &                  &                  \\
+\addlinespace
+loggdpcap       &   -1.755\sym{**} &   -2.897\sym{***}&    0.601\sym{***}\\
+                &  (0.804)         &  (0.793)         & (0.0868)         \\
+\addlinespace
+Log Population  &    11.60\sym{***}&    2.756\sym{***}&    5.754\sym{***}\\
+                &  (1.472)         &  (0.409)         &  (0.217)         \\
+\addlinespace
+Unicef-Reported MCV1 Coverage&                  & -0.00471         &  0.00505\sym{***}\\
+                &                  & (0.0147)         &(0.00146)         \\
+\midrule
+Observations    &      845         &      849         &     1922         \\
+\(R^{2}\)       &                  &                  &                  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+\end{table}

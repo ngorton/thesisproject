@@ -1,0 +1,29 @@
+\documentclass[]{article}
+\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}
+\begin{document}
+\begin{table}
+\begin{tabular}{lccccc}
+\multicolumn{6}{c}{OLS Estimates} \\ \hline
+ & (1) & (2) & (3) & (4) & (5) \\
+ & 1-year Lag & 5-year Lag & 1-year Lag & 5-year Lag & 10-year Lag \\
+VARIABLES & All Countries & All Countries & GAVI-Countries & GAVI-Countries & GAVI-Countries \\ \hline
+ &  &  &  &  &  \\
+survival\_rate = L, & -1.792*** &  & -1.361*** &  &  \\
+ & (0.288) &  & (0.399) &  &  \\
+loggdpcap & 0.0136 & 0.600 & -0.681 & -2.009 & -3.235 \\
+ & (1.512) & (1.543) & (1.927) & (1.689) & (2.491) \\
+Log Population & -14.21** & -21.63*** & -24.35* & -44.15*** & -57.66*** \\
+ & (5.457) & (5.702) & (14.39) & (11.55) & (11.05) \\
+survival\_rate = L, &  & -1.603*** &  & -0.964*** &  \\
+ &  & (0.293) &  & (0.340) &  \\
+survival\_rate = L1, &  &  &  &  & -0.937** \\
+ &  &  &  &  & (0.442) \\
+ &  &  &  &  &  \\
+Observations & 2,782 & 2,562 & 842 & 794 & 725 \\
+R-squared & 0.531 & 0.523 & 0.728 & 0.739 & 0.729 \\
+ Number of pan\_id & 172 & 172 & 65 & 65 & 65 \\ \hline
+\multicolumn{6}{c}{ Robust standard errors in parentheses} \\
+\multicolumn{6}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{table}
+\end{document}
