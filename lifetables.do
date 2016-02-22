@@ -3,6 +3,18 @@ clear
 insheet using lifetablesM.csv, comma names 
 save lifetables, replace
 
+rename agegroup lifetablesage
+ 
+merge m:1 code year using finaldata
+
+X
+
+estpost tabstat survival_prob_lifetables if gavi_status_00, by(lifetablesage) statistics(max min mean sd) listwise
+esttab using lifetables.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber booktabs addnote("note")  eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2)) min(fmt(2)) max(fmt(2))")  
+
+
+
+
 keep if sex == "MLE"
 
 drop if missing(country)

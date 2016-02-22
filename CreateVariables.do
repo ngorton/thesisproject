@@ -5,9 +5,6 @@ use completedata, clear
 
 *does the country have sufficient data? 1 if yes*
 drop if missing(country) 
-replace unicefmcv1 = 0 if missing(unicefmcv1)
-gen in_sample = 1
-replace in_sample = 0 if missing(unicefmcv1) | missing(rateofoutofschoolmf)
 
 *generate factor variables for fixed effects*
 *drop if missing(lp)
@@ -20,6 +17,14 @@ drop if pan_id==.
 
 sort pan_id year
 xtset pan_id year
+
+gen in_sample = 1
+
+gen interpolated_school = rateofoutofschoolmf
+gen fiveyearlaggedlu = l5.lu
+replace interpolated_school = fiveyearlaggedlu if missing(rateofoutofschoolmf)
+
+replace in_sample = 0 if missing(unicefmcv1) | missing(interpolated_school)
 
 *average GNI*
 replace in_sample = 0 if missing(gni)
@@ -246,6 +251,9 @@ gen survival_rate = 100 - mortality_perc
 
 *replace unicefmcv1 = 0 if missing(unicefmcv1)
 
+gen supported = (mean_vaxspending < 40)
+
+
 *label all variables*
 label variable not_mcv_covered "Dummy for Not Measles Herd Immune"
 label variable not_dtp_covered "Dummy for Not DTP Herd Immune"
@@ -272,6 +280,10 @@ label variable secondary_completed "Population with Complete Secondary Education
 label variable tertiary_completed "Population with Complete Higher Education"
 label variable code "ISO Country Code"
 label variable year "Year"
+label variable survival_rate "Survival Rate"
+label variable interpolated_school "Schooling"
+
+label variable gdpcap "GDP per Capita"
 label variable country "Country"
 label variable lifeexpect "Life Expectancy at Birth"
 label variable mortality "Childhood (0-5) Mortality per 1000 Births"
@@ -287,8 +299,8 @@ label variable countrymcv2 "Country-Reported MCV2 Coverage"
 label variable countrypol3 "Country-Reported Polio Coverage"
 label variable unicefdtp1 "Unicef-Reported DTP1 Coverage"
 label variable unicefdtp3 "Unicef-Reported DTP3 Coverage"
-label variable unicefmcv1 "Unicef-Reported MCV1 Coverage"
-label variable unicefmcv2 "Unicef-Reported MCV2 Coverage"
+label variable unicefmcv1 "MCV1 Coverage"
+label variable unicefmcv2 "MCV2 Coverage"
 label variable unicefpol3 "Unicef-Reported Polio Coverage"
 label variable pop "Population"
 label variable logmortality "Log Childhood Mortality"

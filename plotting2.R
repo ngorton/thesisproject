@@ -8,38 +8,34 @@ library(stargazer)
 write.table(read.dta('saturdayam.dta'), file="output.csv", quote = FALSE, sep = ",")
 
 # Read it into R #
-data <- read.csv("output.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
+thesis.data <- read.csv("output.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
 
 # Subsetting by income group # 
-low <- subset(data, data$low == 1)
-high <- subset(data, data$high == 1)
-gavi00 <- subset(data, data$gavi_status_00== 1)
-no.gavi00 <- subset(data, data$gavi_status_00== 0)
+low <- subset(thesis.data, thesis.data$low == 1)
+high <- subset(thesis.data, thesis.data$high == 1)
+gavi00 <- subset(thesis.data, thesis.data$gavi_status_00== 1)
+no.gavi00 <- subset(thesis.data, thesis.data$gavi_status_00== 0)
 
 # Plot some things for poor countries # 
-
-
-
-gavi00.year.diff.coverage.mean <-aggregate(gavi00$diff_mcv1coverage, by=list(gavi00$year), 
-                                           FUN=mean, na.rm=TRUE)
-
-gavi00.mcv1.mean <- ggplot(gavi00.year.diff.coverage.mean, aes(Group.1, x))
-gavi00.mcv1.mean + geom_line() + labs(x = "Year", y = "Change in MCV1 coverage (percentage point)") + 
-  ggtitle("Average Annual Change in MCV1 Coverage Over Time \n Low-Income Countries") + theme_bw()
-
-gavi00.year.schoolingM <- aggregate(gavi00$rateofoutofschoolM, by=list(gavi00$year), 
+# Mean Schooling Rates, GAVI Countries, by year
+gavi00.year.schoolingMF <- aggregate(gavi00$rateofoutofschoolMF, by=list(gavi00$year), 
                                     FUN=mean, na.rm=TRUE)
 
-gavi00.school <- ggplot(na.omit(gavi00.year.schoolingM), aes(x = Group.1, y = x)) +                    # basic graphical object
-  geom_line(colour="green") + labs(x = "Year", y = "Rate of Out of School Boys \n of Primary Age (%)") + 
+gavi00.school <- ggplot(na.omit(gavi00.year.schoolingMF), aes(x = Group.1, y = x)) +                    # basic graphical object
+  geom_line(colour="green") + labs(x = "Year", y = "Rate of Out of School Children \n of Primary Age (%)") + 
   ggtitle("Schooling Trends Over Time, Poor Countries") + theme_bw()
 
+# Total Measles Cases by Year, GAVI-countries
 
 gavi00.year.measlescases <- aggregate(gavi00$measles_cases, by=list(gavi00$year), 
                                       FUN=sum, na.rm=TRUE)
 
+# Total Measles cases by Year, All countries
+
 data.year.measlescases.sum <- aggregate(data$measles_cases, by=list(data$year), 
                                         FUN=sum, na.rm=TRUE)
+
+# Average Vaccine Coverage by year, All countries
 
 data.year.mcv1 <- na.omit(aggregate(data$unicefmcv1, by=list(data$year), 
                                     FUN=mean, na.rm=TRUE))
@@ -107,9 +103,9 @@ gavi00.year.mcv1 <- na.omit(aggregate(gavi00$unicefmcv1, by=list(gavi00$year),
 
 # Average mortality and schooling rates by country 
 
-mean.school <- aggregate(gavi00$rateofoutofschoolMF, by=list(gavi00$code), 
+mean.school <- aggregate(gavi00$interpolated_school, by=list(gavi00$code), 
                                       FUN=mean, na.rm=TRUE)
-mean.mortality <- aggregate(gavi00$mortality, by=list(gavi00$code), 
+mean.mortality <- aggregate(gavi00$child_prob_death, by=list(gavi00$code), 
                                        FUN=mean, na.rm=TRUE)
 # Combine 
 means <- cbind(mean.school, mean.mortality)
@@ -121,8 +117,18 @@ names(means)[3] <- c("code")
 names(means)[4] <- c("school")
 
 # Plot averages of schooling and mortality
-school.mortality.means <- ggplot(data = means, aes(x =school, y = , label = code)) + theme_bw()+xlab("Child Mortality, out of 1000 Live Births")+ylab("Rate of Children Out of School")
-school.mortality.means + geom_text(check_overlap = TRUE) + stat_smooth()
+school.mortality.means <- ggplot(data = means, aes(x =school, y = mort, label = code)) + theme_bw()+xlab("Child Mortality, out of 1000 Live Births")+ylab("Rate of Children Out of School")
+school.mortality.means + geom_point()+stat_smooth()
+
+# Take Values from 1980 
+
+gavi.1980.mort <- gavi00$child_prob_death[(gavi00$year == 1970)]
+gavi.1980.school <- gavi00$interpolated_school[(gavi00$year == 1970)]
+
+gavi.1980 <- data.frame(cbind(gavi.1980.mort, gavi.1980.school))
+
+plotting1980 <- ggplot(data = gavi.1980, aes(x = gavi.1980.mort, y = gavi.1980.school))+geom_point()+theme_bw()
+plotting1980 + xlab("Probability of Childhood Death") + ylab("Rate of Primary School-aged Children \n Out of School, 1980")
 
 # Raw data -- mortality and schooling rates 
 school.mortality <- ggplot(data = gavi00, aes(x = mortality, y = rateofoutofschoolMF)) + geom_point() + stat_smooth()+xlab("Child Mortality, out of 1000 Live Births")+ylab("Rate of Children Out of School") +theme_bw()
@@ -147,15 +153,16 @@ vaccine.budget <- ggplot() +
 gavi00.schooling <- na.omit(aggregate(gavi00$rateofoutofschoolMF, by=list(gavi00$year), 
                                       FUN=mean, na.rm=TRUE))
 
-# Covered with measles vaccine subsets
+# Covered with measles vaccine subsets 
+# Covered == reached Herd immune level 
 
 gavi.sub.covered <- subset(gavi00, mcv_covered == 1)
 gavi.sub.notcovered <- subset(gavi00, mcv_covered == 0)
 
-gavi00.schooling.covered <- na.omit(aggregate(gavi.sub.covered$rateofoutofschoolMF, by=list(gavi.sub.covered$year), 
+gavi00.schooling.covered <- na.omit(aggregate(gavi.sub.covered$interpolated_school, by=list(gavi.sub.covered$year), 
                                               FUN=mean, na.rm=TRUE))
 
-gavi00.schooling.notcovered <- na.omit(aggregate(gavi.sub.notcovered$rateofoutofschoolMF, by=list(gavi.sub.notcovered$year), 
+gavi00.schooling.notcovered <- na.omit(aggregate(gavi.sub.notcovered$interpolated_school, by=list(gavi.sub.notcovered$year), 
                                                  FUN=mean, na.rm=TRUE))
 mean.year <- mean(na.omit(gavi00$index_year))
 mean.year.covered <- mean(na.omit((gavi00[gavi00$mcv_covered == 0,])$index_year))
@@ -165,7 +172,7 @@ mean.year.covered <- mean(na.omit((gavi00[gavi00$mcv_covered == 0,])$index_year)
 awesome.plot <- ggplot(data=gavi00.schooling.covered, aes(x=Group.1, y=x),
                        colour="black") + geom_line(linetype = "dotdash") + 
   geom_line(data=gavi00.schooling.notcovered, aes(x=Group.1, y=x),
-            colour="black") + xlab("Year") + ylab("Percentage of Out of School Children \n Of Primary School Age") +theme_bw()+ xlim(1980, 2014) +  geom_vline(xintercept = 1992)
+            colour="black") + xlab("Year") + ylab("Percentage of Out of School Children \n Of Primary School Age") +theme_bw()+ xlim(1980, 2014)
 
 ## Ploting the Drop off Rate between levels of mortality ## 
 library(reshape2)
