@@ -1,30 +1,30 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{OLS Long Differences}
-\begin{tabular}{l*{6}{c}}
+\begin{tabular}{l*{5}{c}}
 \toprule
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
-                &\multicolumn{1}{c}{interpolated\_school}&\multicolumn{1}{c}{interpolated\_school}&\multicolumn{1}{c}{interpolated\_school}&\multicolumn{1}{c}{interpolated\_school}&\multicolumn{1}{c}{interpolated\_school}&\multicolumn{1}{c}{interpolated\_school}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
 \midrule
-survival\_rate   &   -2.006\sym{**} &   -2.149\sym{***}&   -3.433\sym{***}&                  &                  &   -1.570\sym{***}\\
-                &  (0.720)         &  (0.269)         &  (0.978)         &                  &                  &  (0.317)         \\
+Survival Rate   &   -2.007\sym{***}&   -1.569\sym{***}&   -1.844\sym{***}&   -1.530\sym{***}&   -1.379\sym{***}\\
+                &  (0.274)         &  (0.342)         &  (0.376)         &  (0.340)         &  (0.333)         \\
 \addlinespace
-L10.survival\_rate&                  &                  &                  &   -2.187\sym{***}&                  &                  \\
-                &                  &                  &                  &  (0.349)         &                  &                  \\
+fertility       &    3.275\sym{**} &    3.105         &                  &    3.630         &                  \\
+                &  (0.985)         &  (1.905)         &                  &  (2.128)         &                  \\
 \addlinespace
-L5.survival\_rate&                  &                  &                  &                  &   -1.675\sym{***}&                  \\
-                &                  &                  &                  &                  &  (0.416)         &                  \\
+liberties       &   -1.118         &   -1.584         &                  &   -1.638         &                  \\
+                &  (0.586)         &  (0.921)         &                  &  (0.927)         &                  \\
 \addlinespace
-Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
 \addlinespace
-Controls        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Controls        &      Yes         &      Yes         &       No         &      Yes         &      Yes         \\
 \midrule
-Observations    &      162         &      983         &      112         &      143         &      143         &      332         \\
-\(R^{2}\)       &    0.592         &    0.463         &    0.631         &    0.674         &    0.649         &    0.573         \\
-Sample          &Full Sample         &Full Sample         &All Non-GC         &In-Sample GC         &In-Sample GC         &In-Sample GC         \\
-Years           &1980, 2012         &  5 years         &1980, 2012         &  Decades         &  Decades         &  5 years         \\
+Observations    &      442         &      202         &      170         &      170         &      170         \\
+\(R^{2}\)       &    0.526         &    0.627         &    0.527         &    0.604         &    0.586         \\
+Sample          &Full Sample         &GAVI, All         &GAVI, Base Sample         &GAVI, Base Sample         &GAVI, Base Sample         \\
+Years           &  Decades         &  Decades         &  Decades         &  Decades         &  Decades         \\
 \bottomrule
-\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
 \end{table}

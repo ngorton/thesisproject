@@ -163,6 +163,3 @@ xtivreg interpolated_school gdpcap pop i.year (l10.survival_rate = mcv2)  if gav
 
 
 
-
-
-

@@ -27,13 +27,26 @@ save countryreportedMCV1, replace
 clear
 
 insheet using line_item_vaccines.csv, comma names
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 reshape long natlbudget, i(iso_code) j(year)
 save line_item, replace
 
 clear
 
+insheet using adult_mort.csv, comma names
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+reshape long adultmort, i(iso_code) j(year)
+save adultmort, replace
+
+clear
+
+
 insheet using percent_total_expenditure_on_vacc_gov_funded.csv, comma names
 reshape long vaxspending, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 save percent_total_expenditure_on_vacc_gov_funded, replace
 
 
@@ -41,6 +54,8 @@ clear
 
 insheet using countryreported_coverage_MCV2.csv, comma names
 reshape long yr, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 rename yr countrymcv2
 drop vaccine
 save countryreportedMCV2, replace
@@ -50,6 +65,8 @@ clear
 
 insheet using countryreported_coverage_MCV2.csv, comma names
 reshape long yr, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 rename yr countrymcv2
 drop vaccine
 save countryreportedMCV2, replace
@@ -154,7 +171,7 @@ save unescoM, replace
 
 clear
 
-insheet using mortality_before1980.csv, comma names
+insheet using mortality_full.csv, comma names
 reshape long mortality, i(iso_code) j(year)
 replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
@@ -172,11 +189,15 @@ clear
 
 insheet using under5pop.csv, comma names
 reshape long under5pop, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 save under5pop, replace
 
 clear
 
 insheet using WHOchild_mort.csv, comma names
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
 drop if missing(iso_code)
 save WHOchild_mort, replace
 
@@ -234,6 +255,9 @@ drop _merge
 merge 1:1 iso_code year using unicefestimatedPol3
 drop _merge
 
+merge 1:1 iso_code year using fertility
+drop _merge
+
 merge 1:1 iso_code year using population
 keep if _merge == 3
 drop _merge
@@ -257,9 +281,6 @@ drop _merge
 merge 1:1 iso_code year using gdpcap
 drop _merge
 
-merge 1:1 iso_code year using schooling_formatted
-drop _merge
-
 merge 1:1 iso_code year using oldmort
 drop _merge
 
@@ -269,7 +290,13 @@ drop _merge
 merge 1:1 iso_code year using unescoM
 drop _merge
 
+merge 1:1 iso_code year using adultmort
+drop _merge
+
 merge 1:1 iso_code year using infantmort
+drop _merge
+
+merge 1:1 iso_code year using schooling_formatted
 drop _merge
 
 save master, replace
@@ -284,15 +311,6 @@ drop _merge
 save totaldata, replace
 
 *Now, add in all those world bank development indicators*
-
-use under5mortality, clear
-replace iso_code = "ROU" if (iso_code == "ROM")
-replace iso_code = "COD" if (iso_code == "ZAR")
-drop if year < 1981
-merge 1:1 iso_code year using totaldata
-drop _merge
-
-save totalmortality, replace
 
 use lifeexpect, clear
 replace iso_code = "ROU" if (iso_code == "ROM")
@@ -324,4 +342,15 @@ drop _merge
 
 replace SIA = 0 if missing(SIA)
 
+drop if country == "Romania"
+
+replace country = "Yemen" if country == "Yemen, Rep."
+
 save completedata, replace
+
+
+// insheet using freedomhouseindex.csv, comma names
+// drop status
+//drop liberties1972
+//reshape long liberties, i(country) j(year)
+//merge 1:m country year using finaldata

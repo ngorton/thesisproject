@@ -34,6 +34,13 @@ bys code: egen ave_gni = mean(gni)
 *do some simple calculations*
 bys code year: gen youngpop = (under14pop/100) * pop
 
+* Make average vaccine score * 
+gen vaccine_average = (unicefmcv1+unicefdtp1+unicefdtp3)/3
+replace vaccine_average = (unicefmcv1+unicefdtp1)/2 if missing(unicefdtp3)
+replace vaccine_average = (unicefmcv1+unicefdtp3)/2 if missing(unicefdtp3)
+replace vaccine_average = unicefmcv1 if ( missing(unicefdtp3) & missing(unicefdtp1)) 
+
+
 *poor countries*
 bys code: gen low = 0
 replace low = 1 if ave_gni <= 1035
@@ -110,25 +117,10 @@ gen preventable_cases = measles_cases + dtp_cases
 
 *percentage of vaccinated population*
 
-*estimate measles deaths - 114 900  deaths in 2014*
-gen est_measles_fatality_rate = measles_deaths_60mo/measles_cases 
-gen est_pertussis_fatality_rate = pertussis_deaths/pertussis
-gen est_tetanus_fatality_rate = tetanus_deaths/tetanus
-
 gen diptheria_deaths = diptheria*.20
 gen dtp_deaths = pertussis_deaths + tetanus_deaths + diptheria_deaths
-gen dtp_fatality_rate = 0.2 + est_pertussis_fatality_rate + est_tetanus_fatality_rate 
 
 gen preventable_deaths = measles_deaths + dtp_deaths
-
-*egen mean_measles_rate = mean(measles_fatality_rate)
-*gen estimated_measles_deaths = mean_measles_rate*measles_cases
-
-*egen mean_dtp_rate = mean(dtp_fatality_rate)
-*gen estimated_dtp_deaths = mean_dtp_rate*dtp_cases
-
-*gen estimated_preventable_deaths = estimated_measles_deaths + estimated_dtp_deaths
-
 
 *scale death numbers based on size of young population*
 gen measles_deaths_under5pop = measles_deaths_60mo/under5pop
@@ -170,11 +162,11 @@ replace dtp_covered = 1 if unicefdtp1 > 83
 gen mortality_10000 = mortality*10
 
 destring vaxspending, replace ignore("%")
+ replace natlbudget = "Yes" if natlbudget == "YES"
 tabulate natlbudget, gen(natl_spending)
  
-drop natl_spending1 
-generate budget_dummy = 0
-*replace budget_dummy = 1 if natl_spending3 == 1 | natl_spending4 == 1
+generate budget_dummy = 0 if natl_spending1 == 1
+replace budget_dummy = 1 if natl_spending2 == 1 
 
 gen diff_spending = D.vaxspending
 
@@ -249,12 +241,15 @@ bysort code year: replace intervention_year_dummy_DTP = 0 if missing(interventio
 gen mortality_perc = mortality/1000 * 100 
 gen survival_rate = 100 - mortality_perc
 
-*replace unicefmcv1 = 0 if missing(unicefmcv1)
+* Calculate young child rate
+gen young_mort = mortality-infantmort
+gen young_survive = (1 - young_mort/1000)*100
 
-gen supported = (mean_vaxspending < 40)
+// Supported? 
+//gen supported = (mean_vaxspending < 40)
 
 
-*label all variables*
+// Labeling all variables 
 label variable not_mcv_covered "Dummy for Not Measles Herd Immune"
 label variable not_dtp_covered "Dummy for Not DTP Herd Immune"
 
@@ -318,10 +313,41 @@ label variable ave_gni "Average GNI per Capita by country (over time series)"
 label variable under14pop "Percentage of Population under 14"
 label variable mortality "Under 5 Mortality"
 
-*drop if missing(unicefmcv1)
+// Add some more things and check for duplicates
+quietly bysort country year:  gen dup = cond(_N==1,0,_n)
 
+drop if dup == 2
 
+// Add in liberties data 
+merge 1:1 country year using liberties
+
+// Drop unmerged from using
+drop if _merge == 2
+drop _merge 
+
+drop if missing(code)
+rename code iso_code 
+merge 1:1 iso_code year using adultmort
+drop _merge
+
+rename iso_code code 
+
+drop dup 
+quietly bysort country year:  gen dup = cond(_N==1,0,_n)
+
+drop if dup == 2
+
+*generate weighed vaccine average 
+
+// Add in data for mortality between 5-14
+
+// Set up panel data!
+xtset
+
+// Save data file
 save finaldata, replace
+
+
 
 
 *latabstat DTP_data, by(category) statistics(mean max min sd) format(%8.0gc)

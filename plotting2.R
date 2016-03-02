@@ -5,7 +5,7 @@ library(foreign)
 library(ggplot2)
 library(plm)
 library(stargazer)
-write.table(read.dta('saturdayam.dta'), file="output.csv", quote = FALSE, sep = ",")
+write.table(read.dta('mondayfeb29.dta'), file="output.csv", quote = FALSE, sep = ",")
 
 # Read it into R #
 thesis.data <- read.csv("output.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
@@ -183,4 +183,31 @@ lifetables.stata <- read.csv("lifetables_merged.csv", header = TRUE, row.names=N
 melted.mort <- melt(lifetables.stata, id=c("row.names"))
 ggplot(data=melted.mort, aes(x=variable, y=value)) + geom_boxplot()+scale_x_discrete(name ="Age Group", labels = c("1-4yrs","10-14yrs",
                                                                                                                    "<1 yrs","5-9yrs")) + ylab("Probability of Death") + theme_bw()
-                                                                             
+                                  
+# Motivating Plots 
+low.school <- aggregate(low$interpolated_school, by=list(low$year), 
+                                                 FUN=mean, na.rm=TRUE)
+
+low.mortality <- aggregate(low$survival_rate, by=list(low$year), 
+                                          FUN=mean, na.rm=TRUE)
+low.gdpcap <- aggregate(low$gdpcap, by=list(low$year), 
+                           FUN=mean, na.rm=TRUE)
+low.gdpcap$loggedgdp<- log(low.gdpcap$x)
+
+low.combined <- cbind(low.school, low.mortality, low.gdpcap)
+colnames(low.combined) <- c("year" ,"school", "year" ,"mort", "year", "gdpcap", "loggdp")
+
+low.years <- subset(low.combined, low.combined$year > 1979)
+
+low.mort.plot <- ggplot(data = low.mortality, aes(x = low.mortality$Group.1, y = x)) + geom_point() + xlim(1980, 2015) + theme_bw() + ylab("Percentage of Children Born Who \n Survive Past 5") + xlab("Year")
+low.schl.plot <- ggplot(data = low.school, aes(x = low.school$Group.1, y = x)) + geom_point() + xlim(1980, 2015) + theme_bw() + ylab("Percentage of Children Ages 6-11 \n Out of School") + xlab("Year")
+
+low.schl.plot <- ggplot(data = low.school, aes(x = low.school$Group.1, y = x)) + geom_point() + xlim(1980, 2015) + theme_bw() + ylab("Percentage of Children Ages 6-11 \n Out of School") + xlab("Year")
+
+combined.plot.mort <- ggplot(data = low.years, aes(x = mort, y = school))+geom_point() + theme_bw() + xlab("Percentage of Children Who Surive Past Age 5") + ylab("Percentage of Children Ages 6-11 \n Out of School")
+
+combined.plot.gdp <- ggplot(data = low.years, aes(x = loggdp, y = school))+geom_point() + theme_bw() + xlab("Log GDP per Capita") + ylab("Percentage of Children Ages 6-11 \n Out of School")
+
+
+
+

@@ -4,8 +4,28 @@ insheet using lifetablesM.csv, comma names
 save lifetables, replace
 
 rename agegroup lifetablesage
+
+rename country code
+
+drop if missing(code)
  
-merge m:1 code year using finaldata
+merge m:1 code year using gni
+
+gen gni_val_2000 = gni if year == 2000
+gen gavi_status_00 = 0
+replace gavi_status_00 = 1 if gni_val_2000 < 1000 | ave_gni < 1000
+bysort code: replace gavi_status_00 = 1 if sum(gavi_status_00) == 1
+replace gavi_status_00 = 1 if country == "Myanmar"
+replace gavi_status_00 = 1 if country == "Sri Lanka"
+replace gavi_status_00 = 0 if code == "GNQ"
+replace gavi_status_00 = 1 if country == "Sao Tome and Principe"
+replace gavi_status_00 = 1 if country == "Solomon Islands"
+replace gavi_status_00 = 1 if country == "Albania"
+replace gavi_status_00 = 1 if country == "Timor-Leste"
+replace gavi_status_00 = 0 if code == "SYR"
+replace gavi_status_00 = 0 if code == "SYR"
+replace gavi_status_00 = 0 if code == "PHL"
+
 
 X
 

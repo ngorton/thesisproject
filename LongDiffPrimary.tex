@@ -1,32 +1,39 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Primary Specification Long Differences}
-\begin{tabular}{l*{7}{c}}
+\begin{tabular}{l*{11}{c}}
 \toprule
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
-                &\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{RF}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{IV}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}&\multicolumn{1}{c}{(11)}\\
+                &\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{FS}&\multicolumn{1}{c}{DE}&\multicolumn{1}{c}{DE}&\multicolumn{1}{c}{DE}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{IV}&\multicolumn{1}{c}{est11}\\
 \midrule
-L.Unicef-Reported MCV1 Coverage&    0.105\sym{***}&                  &   -0.177\sym{*}  &   -0.177\sym{*}  &                  &                  &                  \\
-                & (0.0237)         &                  & (0.0759)         & (0.0759)         &                  &                  &                  \\
+L.MCV1 Coverage &    0.112\sym{***}&   0.0670\sym{***}&                  &   -0.130         &  -0.0550         &                  &                  &                  &                  &                  &                  \\
+                & (0.0215)         & (0.0188)         &                  & (0.0676)         & (0.0465)         &                  &                  &                  &                  &                  &                  \\
 \addlinespace
-L2.Unicef-Reported MCV1 Coverage&                  &   0.0746\sym{***}&                  &                  &  -0.0424         &                  &                  \\
-                &                  & (0.0166)         &                  &                  & (0.0661)         &                  &                  \\
+L2.MCV1 Coverage&                  &                  &   0.0697\sym{***}&                  &                  &-0.000367         &                  &                  &                  &                  &                  \\
+                &                  &                  & (0.0194)         &                  &                  & (0.0678)         &                  &                  &                  &                  &                  \\
 \addlinespace
-survival\_rate   &                  &                  &                  &                  &                  &   -1.679\sym{*}  &                  \\
-                &                  &                  &                  &                  &                  &  (0.837)         &                  \\
+liberties       &   -0.528         &   -0.324         &   -0.377         &   -0.872         &   -0.950         &   -0.367         &                  &   -1.466         &   -1.484         &   -1.347         &  -0.0711         \\
+                &  (0.298)         &  (0.236)         &  (0.313)         &  (1.282)         &  (0.945)         &  (1.382)         &                  &  (1.284)         &  (1.333)         &  (0.822)         & (0.0437)         \\
 \addlinespace
-L5.survival\_rate&                  &                  &                  &                  &                  &                  &   -2.156\sym{*}  \\
-                &                  &                  &                  &                  &                  &                  &  (1.080)         \\
+fertility       &    0.874         &    0.829         &    0.817         &    3.496         &    4.306         &    4.447         &                  &                  &    4.510         &                  &                  \\
+                &  (0.657)         &  (0.696)         &  (0.787)         &  (2.571)         &  (2.225)         &  (2.573)         &                  &                  &  (2.594)         &                  &                  \\
 \addlinespace
-Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Survival Rate   &                  &                  &                  &                  &                  &                  &   -1.606\sym{*}  &   -1.649\sym{*}  &   -1.161         &                  &                  \\
+                &                  &                  &                  &                  &                  &                  &  (0.819)         &  (0.824)         &  (0.821)         &                  &                  \\
 \addlinespace
-Controls        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+L.Survival Rate &                  &                  &                  &                  &                  &                  &                  &                  &                  &   -1.278         &   -0.135\sym{*}  \\
+                &                  &                  &                  &                  &                  &                  &                  &                  &                  &  (1.032)         & (0.0548)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Controls        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
 \midrule
-Observations    &      133         &      131         &      133         &      133         &      131         &      133         &      319         \\
-\(R^{2}\)       &    0.750         &    0.711         &    0.581         &    0.581         &    0.558         &                  &                  \\
-Years           &  Decades         &  Decades         &  Decades         &  5-years         &  Decades         &  Decades         &    5-yrs         \\
+Observations    &      160         &      296         &      158         &      160         &      297         &      158         &      140         &      140         &      160         &      290         &      290         \\
+\(R^{2}\)       &    0.789         &    0.682         &    0.735         &    0.548         &    0.471         &    0.553         &                  &                  &                  &                  &                  \\
+Years           &  Decades         &  5 years         &  Decades         &  Decades         &  5-years         &  Decades         &  Decades         &  Decades         &  Decades         &  5-years         &  5-years         \\
+Fertility?      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &       No         &       No         &      Yes         &      Yes         &      LHS         \\
 \bottomrule
-\multicolumn{8}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{8}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{12}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{12}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
 \end{table}
