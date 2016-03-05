@@ -1,0 +1,30 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Primary Specification Reduced Form}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
+\midrule
+weighted\_vaccine\_avg\_efficacy&  -0.0565         &  -0.0395         &  -0.0565         &  -0.0395         \\
+                &  (0.113)         &  (0.136)         &  (0.113)         &  (0.136)         \\
+\addlinespace
+Civil Liberties &                  &   -0.474         &                  &   -0.474         \\
+                &                  &  (1.232)         &                  &  (1.232)         \\
+\addlinespace
+Fertility Rate  &                  &    3.873         &                  &    3.873         \\
+                &                  &  (2.880)         &                  &  (2.880)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Controls        &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      170         &      159         &      170         &      159         \\
+\(R^{2}\)       &    0.540         &    0.550         &    0.540         &    0.550         \\
+Years           &  Decades         &  Decades         &  Decades         &  Decades         \\
+Group           & Children         & Children         &   Adults         &   Adults         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

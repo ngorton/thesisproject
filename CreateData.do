@@ -240,6 +240,10 @@ drop _merge
 merge 1:1 iso_code year using countryreportedPol3
 drop _merge
 
+merge 1:1 iso_code year using meanyears_long
+drop _merge
+
+
 merge 1:1 iso_code year using unicefestimatedDTP3
 drop _merge
 

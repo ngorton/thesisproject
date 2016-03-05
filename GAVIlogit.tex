@@ -1,0 +1,36 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Testing Determinants of GAVI Status}
+\begin{tabular}{l*{3}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                &\multicolumn{1}{c}{gavi\_status\_00}&\multicolumn{1}{c}{gavi\_status\_00}&\multicolumn{1}{c}{gavi\_status\_00}\\
+\midrule
+gavi\_status\_00  &                  &                  &                  \\
+loggdpcap       &   -3.704\sym{***}&   -4.077\sym{***}&   -3.984\sym{***}\\
+                &  (0.705)         &  (0.314)         &  (0.235)         \\
+\addlinespace
+liberties       &  -0.0271         &    0.553\sym{***}&    0.359\sym{***}\\
+                &  (0.246)         & (0.0853)         & (0.0657)         \\
+\addlinespace
+preventable\_deaths&   0.0103         &   0.0137\sym{**} &                  \\
+                & (0.0100)         &(0.00484)         &                  \\
+\addlinespace
+Survival Rate   &  -0.0132         &                  &                  \\
+                &  (0.138)         &                  &                  \\
+\addlinespace
+log\_sch         &    1.782         &                  &                  \\
+                &  (1.509)         &                  &                  \\
+\addlinespace
+vaxspending     &   -0.121\sym{***}&  -0.0385\sym{***}&  -0.0188\sym{***}\\
+                & (0.0279)         &(0.00528)         &(0.00339)         \\
+\addlinespace
+Year FE         &       No         &      Yes         &      Yes         \\
+\midrule
+Observations    &      317         &     1795         &     2515         \\
+\(R^{2}\)       &                  &                  &                  \\
+\bottomrule
+\multicolumn{4}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

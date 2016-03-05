@@ -275,9 +275,9 @@ label variable secondary_completed "Population with Complete Secondary Education
 label variable tertiary_completed "Population with Complete Higher Education"
 label variable code "ISO Country Code"
 label variable year "Year"
-label variable survival_rate "Survival Rate"
+label variable survival_rate "Chilldhood Survival Rate"
 label variable interpolated_school "Schooling"
-
+label variable fertility "Fertility Rate"
 label variable gdpcap "GDP per Capita"
 label variable country "Country"
 label variable lifeexpect "Life Expectancy at Birth"
@@ -318,8 +318,12 @@ quietly bysort country year:  gen dup = cond(_N==1,0,_n)
 
 drop if dup == 2
 
+drop dup 
+
 // Add in liberties data 
-merge 1:1 country year using liberties
+merge 1:1 code year using liberties_merged
+label variable liberties "Civil Liberties"
+
 
 // Drop unmerged from using
 drop if _merge == 2
@@ -327,28 +331,24 @@ drop _merge
 
 drop if missing(code)
 rename code iso_code 
+
+// Adult Morality Data
+
 merge 1:1 iso_code year using adultmort
 drop _merge
 
-rename iso_code code 
+// Mean Years of Schooling 
 
-drop dup 
-quietly bysort country year:  gen dup = cond(_N==1,0,_n)
+merge 1:1 iso_code year using meanyears_long
+drop _merge
 
-drop if dup == 2
-
-*generate weighed vaccine average 
-
-// Add in data for mortality between 5-14
+// Delete dups
+quietly bysort pan_id year:  gen dup = cond(_N==1,0,_n)
+drop if dup >1 
+drop dup
 
 // Set up panel data!
 xtset
 
 // Save data file
 save finaldata, replace
-
-
-
-
-*latabstat DTP_data, by(category) statistics(mean max min sd) format(%8.0gc)
-*latabstat measles_data, by(category) statistics(mean max min sd) format(%8.0gc)

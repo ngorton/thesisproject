@@ -1,0 +1,33 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{OLS Long Differences}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
+\midrule
+Log Life Expectancy at Birth&   -44.83\sym{***}&   -35.37\sym{**} &                  &                  \\
+                &  (9.684)         &  (10.35)         &                  &                  \\
+\addlinespace
+Fertility Rate  &    3.014\sym{**} &    2.633         &    1.855\sym{*}  &    3.846         \\
+                &  (1.032)         &  (2.409)         &  (0.890)         &  (2.349)         \\
+\addlinespace
+Civil Liberties &   -0.757         &   -0.759         &   -1.437\sym{**} &   -1.755         \\
+                &  (0.601)         &  (1.191)         &  (0.524)         &  (1.227)         \\
+\addlinespace
+Chilldhood Survival Rate&                  &                  &   -1.948\sym{***}&   -1.507\sym{***}\\
+                &                  &                  &  (0.285)         &  (0.368)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Controls        &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      521         &      160         &      519         &      159         \\
+\(R^{2}\)       &    0.460         &    0.575         &    0.543         &    0.601         \\
+Sample          &Full Sample         &GAVI Sample         &Full Sample         &GAVI Sample         \\
+Years           &  Decades         &  Decades         &  Decades         &  Decades         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

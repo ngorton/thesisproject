@@ -25,3 +25,12 @@ xtreg unicefdtp1 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe 
 xtreg unicefdtp3 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
 
 xtreg unicefpol3 vaxspending i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
+
+// Testing the determinants of GAVI Status
+eststo clear
+eststo: logit gavi_status_00 loggdpcap liberties preventable_deaths survival_rate log_sch vaxspending
+eststo: logit gavi_status_00 loggdpcap liberties vaxspending preventable_deaths i.year
+eststo: logit gavi_status_00 loggdpcap liberties vaxspending i.year
+
+esttab using GAVIlogit.tex, replace label booktabs indicate("Year FE = *.year" )title("Testing Determinants of GAVI Status") se r2 noconstant compress nobaselevels 
+

@@ -258,6 +258,9 @@ drop _merge
 merge 1:1 iso_code year using fertility
 drop _merge
 
+merge 1:1 iso_code year using meanyears_long
+drop _merge
+
 merge 1:1 iso_code year using population
 keep if _merge == 3
 drop _merge

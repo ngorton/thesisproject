@@ -5,7 +5,7 @@ library(foreign)
 library(ggplot2)
 library(plm)
 library(stargazer)
-write.table(read.dta('mondayfeb29.dta'), file="output.csv", quote = FALSE, sep = ",")
+write.table(read.dta('fridaynight.dta'), file="output.csv", quote = FALSE, sep = ",")
 
 # Read it into R #
 thesis.data <- read.csv("output.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
@@ -209,5 +209,23 @@ combined.plot.mort <- ggplot(data = low.years, aes(x = mort, y = school))+geom_p
 combined.plot.gdp <- ggplot(data = low.years, aes(x = loggdp, y = school))+geom_point() + theme_bw() + xlab("Log GDP per Capita") + ylab("Percentage of Children Ages 6-11 \n Out of School")
 
 
+## Section 2 Plots
 
+gavi00.mortality <- aggregate(gavi00$survival_rate, by=list(gavi00$year), 
+                           FUN=mean, na.rm=TRUE)
+gavi00.lifeexpect <- aggregate(gavi00$loglifeexpect, by=list(gavi00$year), 
+                              FUN=mean, na.rm=TRUE)
+
+gavi.life <- ggplot(data = gavi00.lifeexpect, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Log Life Expectancy")
+
+gavi.mort <- ggplot(data = gavi00.mortality, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Childhood Survival Rate") +xlim(1980,2014)
+
+
+gavi00$adultsurvive <- (1 - (gavi00$adultmort/1000))*100
+
+
+gavi00.adultsur <- aggregate(gavi00$adultsurvive, by=list(gavi00$year), 
+                               FUN=mean, na.rm=TRUE)
+
+gavi.mort <- ggplot(data = gavi00.adultsur, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Adult Survival Rate") +xlim(1980,2014)
 
