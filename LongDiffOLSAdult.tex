@@ -1,31 +1,35 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{OLS Long Differences}
+\caption{OLS Estimates}
 \begin{tabular}{l*{4}{c}}
 \toprule
                 &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
                 &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
 \midrule
-Log Life Expectancy at Birth&   -44.83\sym{***}&   -35.37\sym{**} &                  &                  \\
-                &  (9.684)         &  (10.35)         &                  &                  \\
+Log Life Expectancy at Birth&   -39.37\sym{***}&   -31.74\sym{*}  &                  &                  \\
+                &  (8.889)         &  (13.52)         &                  &                  \\
 \addlinespace
-Fertility Rate  &    3.014\sym{**} &    2.633         &    1.855\sym{*}  &    3.846         \\
-                &  (1.032)         &  (2.409)         &  (0.890)         &  (2.349)         \\
+loggdpcap       &    1.867         &    3.986         &    0.995         &    4.099         \\
+                &  (1.090)         &  (2.158)         &  (0.965)         &  (2.060)         \\
 \addlinespace
-Civil Liberties &   -0.757         &   -0.759         &   -1.437\sym{**} &   -1.755         \\
-                &  (0.601)         &  (1.191)         &  (0.524)         &  (1.227)         \\
+Log Population  &   -9.588         &   -26.62\sym{*}  &   -2.750         &   -8.633         \\
+                &  (5.683)         &  (10.89)         &  (3.888)         &  (13.62)         \\
 \addlinespace
-Chilldhood Survival Rate&                  &                  &   -1.948\sym{***}&   -1.507\sym{***}\\
-                &                  &                  &  (0.285)         &  (0.368)         \\
+Fertility Rate  &    3.136\sym{**} &    5.256\sym{*}  &    2.173\sym{*}  &    5.912\sym{**} \\
+                &  (1.023)         &  (2.137)         &  (0.869)         &  (2.018)         \\
+\addlinespace
+Civil Liberties &   -0.704         &   -0.935         &   -1.231\sym{**} &   -1.448         \\
+                &  (0.441)         &  (0.834)         &  (0.435)         &  (0.848)         \\
+\addlinespace
+Chilldhood Survival Rate&                  &                  &   -1.776\sym{***}&   -1.585\sym{**} \\
+                &                  &                  &  (0.275)         &  (0.481)         \\
 \addlinespace
 Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
-\addlinespace
-Controls        &      Yes         &      Yes         &      Yes         &      Yes         \\
 \midrule
-Observations    &      521         &      160         &      519         &      159         \\
-\(R^{2}\)       &    0.460         &    0.575         &    0.543         &    0.601         \\
+Observations    &      920         &      293         &      917         &      291         \\
+\(R^{2}\)       &    0.408         &    0.504         &    0.479         &    0.534         \\
 Sample          &Full Sample         &GAVI Sample         &Full Sample         &GAVI Sample         \\
-Years           &  Decades         &  Decades         &  Decades         &  Decades         \\
+Years           &  5 Years         &  5 Years         &  5 Years         &  5 Years         \\
 \bottomrule
 \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
 \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\

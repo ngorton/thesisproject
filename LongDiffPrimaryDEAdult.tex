@@ -1,28 +1,34 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{Primary Specification Reduced Form}
+\caption{Primary Specification Direct Effects}
 \begin{tabular}{l*{4}{c}}
 \toprule
                 &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
-                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{loggdpcap}\\
 \midrule
-weighted\_vaccine\_avg\_efficacy&  -0.0565         &  -0.0395         &  -0.0565         &  -0.0395         \\
-                &  (0.113)         &  (0.136)         &  (0.113)         &  (0.136)         \\
+weighted\_vaccine\_avg\_efficacy& -0.00372         & -0.00372         & 0.000505         &  0.00832\sym{*}  \\
+                &  (0.146)         &  (0.146)         &(0.00108)         &(0.00365)         \\
 \addlinespace
-Civil Liberties &                  &   -0.474         &                  &   -0.474         \\
-                &                  &  (1.232)         &                  &  (1.232)         \\
+loggdpcap       &    5.761\sym{*}  &    5.761\sym{*}  &  -0.0898\sym{***}&                  \\
+                &  (2.878)         &  (2.878)         & (0.0213)         &                  \\
 \addlinespace
-Fertility Rate  &                  &    3.873         &                  &    3.873         \\
-                &                  &  (2.880)         &                  &  (2.880)         \\
+Log Population  &   -27.65\sym{*}  &   -27.65\sym{*}  &                  &   -1.945\sym{***}\\
+                &  (11.50)         &  (11.50)         &                  &  (0.326)         \\
+\addlinespace
+Civil Liberties &   -0.240         &   -0.240         &  0.00856         &  -0.0806         \\
+                &  (1.294)         &  (1.294)         & (0.0120)         & (0.0503)         \\
+\addlinespace
+Fertility Rate  &    6.389\sym{*}  &    6.389\sym{*}  & -0.00600         &   0.0322         \\
+                &  (2.780)         &  (2.780)         & (0.0204)         & (0.0747)         \\
+\addlinespace
+Chilldhood Survival Rate&                  &                  &   0.0175\sym{***}& -0.00731         \\
+                &                  &                  &(0.00414)         & (0.0152)         \\
 \addlinespace
 Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
-\addlinespace
-Controls        &      Yes         &      Yes         &      Yes         &      Yes         \\
 \midrule
-Observations    &      170         &      159         &      170         &      159         \\
-\(R^{2}\)       &    0.540         &    0.550         &    0.540         &    0.550         \\
+Observations    &      159         &      159         &      159         &      159         \\
+\(R^{2}\)       &    0.537         &    0.537         &    0.931         &    0.801         \\
 Years           &  Decades         &  Decades         &  Decades         &  Decades         \\
-Group           & Children         & Children         &   Adults         &   Adults         \\
 \bottomrule
 \multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
 \multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\

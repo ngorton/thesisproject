@@ -90,29 +90,7 @@ estadd local yrs  "5-years"
 esttab using LongDiffSecondary.tex, replace indicate("Year FE = *.year" ) label booktabs scalars("yrs Years") mtitle("FS" "FS" "FS" "FS" "RF" "RF" "RF" "IV" "IV")  title("Secondary Specification Long Differences") se r2 noconstant compress nobaselevels 
 
 // Non-linearity of vaccine coverage
-mkspline mcv1 30 mcv2 60 mcv3 90 mcv4 = unicefmcv1
-eststo clear
-eststo: xtreg f.survival_rate  mcv1-mcv4  i.year gdpcap pop if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1995 | year == 1985 | year == 2005| year == 2010 | year == 1990 | year == 2000 | year == 2012), fe robust cluster(pan_id)
- estadd local yrs  "5-years"
- 
- eststo: xtreg f2.survival_rate  mcv1-mcv4  i.year gdpcap pop if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1995 | year == 1985 | year == 2005| year == 2010 | year == 1990 | year == 2000 | year == 2012), fe robust cluster(pan_id)
- estadd local yrs  "5-years"
-
-eststo: xtreg f4.interpolated_school mcv1-mcv4 i.year gdpcap pop if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1990 | year == 2000 | year == 2012), fe robust cluster(pan_id)
- estadd local yrs  "Decades"
- 
- eststo: xtreg f5.interpolated_school mcv1-mcv4  i.year gdpcap pop if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1995 | year == 1985 | year == 2005| year == 2010 | year == 1990 | year == 2000 | year == 2012), fe robust cluster(pan_id)
- estadd local yrs  "5-years"
-
- eststo: xtivreg interpolated_school gdpcap pop i.year (f.survival_rate = mcv1-mcv4 )  if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1990 | year == 2000 | year == 2012), fe
- estadd local yrs  "Decades"
- 
- eststo: xtivreg interpolated_school gdpcap pop i.year (f2.survival_rate = mcv1-mcv4 )  if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1995 | year == 1985 | year == 2005| year == 2010 | year == 1990 | year == 2000 | year == 2012), fe
- estadd local yrs  "5-years"
-
- esttab using LongDiffSplines.tex, replace indicate("Year FE = *.year" ) label booktabs scalars("yrs Years") mtitle("FS" "FS" "RF" "RF" "IV" "IV")  title("Non-Linearity, Long Differences") se r2 noconstant compress nobaselevels 
-
- 
+gdpcap pop
 // Countries covering less than 90 % of their own immunization costs 
 eststo clear
 egen meanvaxspending = mean(vaxspending)

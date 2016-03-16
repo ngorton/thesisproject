@@ -14,7 +14,6 @@ estpost tabstat vaxspending unicefmcv1 unicefmcv2 unicefdtp1 unicefdtp3 measles_
 esttab using tables3.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber addnote("note")  eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2))")  
 
 
-
 xtreg unicefmcv1 vaxspending gdpcap pop liberties i.year if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
 outreg2 using firststage2.tex, label nocons keep(l5.mortality) noobs replace ctitle("OLS, 5-year Lag") addtext(Country FE, Yes, Year FE, Yes, Controls, Yes)
 
@@ -34,3 +33,6 @@ eststo: logit gavi_status_00 loggdpcap liberties vaxspending i.year
 
 esttab using GAVIlogit.tex, replace label booktabs indicate("Year FE = *.year" )title("Testing Determinants of GAVI Status") se r2 noconstant compress nobaselevels 
 
+
+estpost tabstat measles_cases , by(gavi_status_00) statistics(mean sd) columns(statistics) listwise not 
+esttab using tables3.tex, replace main(mean) aux(sd) nostar unstack noobs nomtitle nonumber addnote("note")  eqlabels(`e(labels)') cells("mean(fmt(2)) sd(fmt(2))")  

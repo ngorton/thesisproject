@@ -90,3 +90,7 @@ xtreg rateofoutofschoolMF intervention_year_dummy logpop loggdp i.year if gavi_s
 xtivreg rateofoutofschoolMF (survival_rate = intervention_year_dummy) logpop loggdp i.year if gavi_status_00 == 1, fe 
 
 xtivreg rateofoutofschoolMF (survival_rate = intervention_year_dummy) logpop loggdp i.year if gavi_status_00 == 1 & (year == 1980  | year == 1990 | year == 2012), fe
+
+
+
+

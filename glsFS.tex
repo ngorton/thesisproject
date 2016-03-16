@@ -1,0 +1,43 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Splines: First Stage Estimates}
+\begin{tabular}{l*{2}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+                &\multicolumn{1}{c}{Chilldhood Survival Rate}&\multicolumn{1}{c}{Log Life Expectancy at Birth}\\
+\midrule
+weighted\_vaccine\_avg\_efficacy: (.,20)&-0.000986         &  0.00125         \\
+                & (0.0258)         &(0.000682)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (20,45)&   0.0378\sym{***}& 0.000656\sym{***}\\
+                &(0.00600)         &(0.000175)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (45,70)&   0.0121\sym{**} &0.0000560         \\
+                &(0.00412)         &(0.000124)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (70,.)&  0.00262         & 0.000373\sym{*}  \\
+                &(0.00516)         &(0.000188)         \\
+\addlinespace
+loggdpcap       &    0.209\sym{**} &  0.00477         \\
+                & (0.0778)         &(0.00245)         \\
+\addlinespace
+Log Population  &    11.66\sym{***}&   0.0975\sym{***}\\
+                &  (0.505)         & (0.0133)         \\
+\addlinespace
+Fertility Rate  &    0.411\sym{***}&  -0.0128\sym{***}\\
+                & (0.0573)         &(0.00199)         \\
+\addlinespace
+Civil Liberties &   -0.108\sym{***}& -0.00326\sym{***}\\
+                & (0.0306)         &(0.000841)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         \\
+\addlinespace
+Country FE      &      Yes         &      Yes         \\
+\midrule
+Observations    &      920         &      922         \\
+\(R^{2}\)       &                  &                  \\
+\bottomrule
+\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

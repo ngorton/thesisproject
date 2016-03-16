@@ -1,33 +1,37 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\caption{Primary Specification Reduced Form}
-\begin{tabular}{l*{4}{c}}
+\caption{Primary Specification IV Estimates}
+\begin{tabular}{l*{6}{c}}
 \toprule
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
-                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
 \midrule
-Log Life Expectancy at Birth&   -19.09         &   -27.70         &                  &                  \\
-                &  (55.86)         &  (48.22)         &                  &                  \\
+Log Life Expectancy at Birth&   -119.5\sym{*}  &   -102.2         &   -67.69         &                  &                  &                  \\
+                &  (58.27)         &  (65.10)         &  (74.19)         &                  &                  &                  \\
 \addlinespace
-Civil Liberties &   -0.643         &                  &   -0.762         &                  \\
-                &  (1.437)         &                  &  (1.571)         &                  \\
+loggdpcap       &    7.851\sym{*}  &    5.712         &    5.593         &    4.952         &    5.278         &    4.610         \\
+                &  (3.406)         &  (3.915)         &  (3.931)         &  (3.290)         &  (3.644)         &  (3.442)         \\
 \addlinespace
-Fertility Rate  &    3.324         &                  &    4.076         &                  \\
-                &  (3.526)         &                  &  (2.617)         &                  \\
+Log Population  &                  &   -19.05         &   -20.97         &                  &    3.621         &   -12.91         \\
+                &                  &  (18.74)         &  (18.76)         &                  &  (28.72)         &  (23.91)         \\
 \addlinespace
-Chilldhood Survival Rate&                  &                  &   -0.307         &   -0.610         \\
-                &                  &                  &  (0.901)         &  (1.059)         \\
+Civil Liberties &                  &                  &   -2.507         &                  &                  &   -3.069         \\
+                &                  &                  &  (1.584)         &                  &                  &  (1.739)         \\
 \addlinespace
-Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Fertility Rate  &                  &                  &    3.970         &                  &                  &    6.287\sym{*}  \\
+                &                  &                  &  (4.099)         &                  &                  &  (2.649)         \\
 \addlinespace
-Controls        &      Yes         &      Yes         &      Yes         &      Yes         \\
+Chilldhood Survival Rate&                  &                  &                  &   -2.467\sym{*}  &   -2.535         &   -1.204         \\
+                &                  &                  &                  &  (1.091)         &  (1.541)         &  (1.246)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
 \midrule
-Observations    &      159         &      170         &      159         &      170         \\
-\(R^{2}\)       &                  &                  &                  &                  \\
-Years           &  Decades         &  Decades         &  Decades         &  Decades         \\
-Group           &   Adults         &   Adults         & Children         & Children         \\
+Observations    &      170         &      170         &      159         &      170         &      170         &      159         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  &                  \\
+Years           &  Decades         &  Decades         &  Decades         &  Decades         &  Decades         &  Decades         \\
+Group           &                  &                  &                  &                  &                  &                  \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
 \end{table}

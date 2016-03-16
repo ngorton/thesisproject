@@ -1,0 +1,35 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Leads of Schooling Rate}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &\multicolumn{1}{c}{F2.logschool}&\multicolumn{1}{c}{F5.logschool}&\multicolumn{1}{c}{F10.logschool}&\multicolumn{1}{c}{F2.logschool}&\multicolumn{1}{c}{F5.logschool}&\multicolumn{1}{c}{F10.logschool}\\
+\midrule
+Chilldhood Survival Rate&   0.0186         &    0.135         &  -0.0513         &                  &                  &                  \\
+                & (0.0974)         &  (0.158)         & (0.0977)         &                  &                  &                  \\
+\addlinespace
+loggdpcap       &   -0.117         &  -0.0766         &    0.292         &   -0.131         &   -0.127         &    0.307         \\
+                &  (0.137)         &  (0.231)         &  (0.205)         &  (0.137)         &  (0.259)         &  (0.215)         \\
+\addlinespace
+Log Population  &   -1.121         &   -2.884         &    0.403         &   -0.987         &   -1.902         &   0.0541         \\
+                &  (1.789)         &  (2.900)         &  (1.837)         &  (1.278)         &  (1.790)         &  (1.354)         \\
+\addlinespace
+Fertility Rate  &    0.406\sym{*}  &    0.212         &    0.375\sym{*}  &    0.420\sym{*}  &    0.307         &    0.344\sym{*}  \\
+                &  (0.202)         &  (0.221)         &  (0.162)         &  (0.209)         &  (0.203)         &  (0.175)         \\
+\addlinespace
+Civil Liberties &   0.0625         &   0.0411         &   0.0430         &   0.0574         &  0.00487         &   0.0504         \\
+                & (0.0591)         & (0.0976)         & (0.0693)         & (0.0495)         & (0.0732)         & (0.0646)         \\
+\addlinespace
+Log Life Expectancy at Birth&                  &                  &                  &    0.657         &    4.574         &   -1.564         \\
+                &                  &                  &                  &  (3.464)         &  (5.159)         &  (3.132)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      646         &      626         &      445         &      646         &      626         &      445         \\
+\(R^{2}\)       &    0.257         &    0.110         &    0.266         &    0.253         &    0.102         &    0.255         \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{+} \(p<0.10\), \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

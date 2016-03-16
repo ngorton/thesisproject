@@ -1,0 +1,35 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Non-Human Capital Growth Outcomes}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &\multicolumn{1}{c}{Log GDP per Capita}&\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{Log GDP per Capita}&\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}\\
+\midrule
+Chilldhood Survival Rate&   0.0756         &   -0.138\sym{*}  &   0.0219\sym{***}&                  &                  &                  \\
+                & (0.0413)         & (0.0573)         &(0.00558)         &                  &                  &                  \\
+\addlinespace
+Log Population  &   -2.973\sym{***}&    1.596         &                  &   -2.323\sym{***}&    0.531         &                  \\
+                &  (0.743)         &  (1.111)         &                  &  (0.558)         &  (0.844)         &                  \\
+\addlinespace
+Civil Liberties & -0.00693         &   -0.189\sym{*}  &   0.0135         &  -0.0398         &  -0.0987         & -0.00109         \\
+                & (0.0578)         & (0.0788)         & (0.0103)         & (0.0573)         & (0.0712)         & (0.0141)         \\
+\addlinespace
+Fertility Rate  &   0.0107         &                  &                  &    0.147         &                  &                  \\
+                & (0.0882)         &                  &                  &  (0.144)         &                  &                  \\
+\addlinespace
+Log GDP per Capita     &                  &   0.0197         &  -0.0829\sym{***}&                  &    0.105         &   -0.116\sym{***}\\
+                &                  &  (0.160)         & (0.0214)         &                  &  (0.180)         & (0.0298)         \\
+\addlinespace
+Log Life Expectancy at Birth&                  &                  &                  &    4.003         &   -6.128\sym{*}  &    1.170\sym{**} \\
+                &                  &                  &                  &  (2.513)         &  (2.730)         &  (0.450)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      159         &      159         &      159         &      159         &      159         &      159         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  &                  \\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

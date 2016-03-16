@@ -1,0 +1,17 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{15}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}&\multicolumn{1}{c}{(11)}&\multicolumn{1}{c}{(12)}&\multicolumn{1}{c}{(13)}&\multicolumn{1}{c}{(14)}&\multicolumn{1}{c}{(15)}\\
+                &\multicolumn{1}{c}{logschool}&\multicolumn{1}{c}{F.logschool}&\multicolumn{1}{c}{F2.logschool}&\multicolumn{1}{c}{F3.logschool}&\multicolumn{1}{c}{F4.logschool}&\multicolumn{1}{c}{F5.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F7.logschool}&\multicolumn{1}{c}{F8.logschool}&\multicolumn{1}{c}{F9.logschool}&\multicolumn{1}{c}{F10.logschool}&\multicolumn{1}{c}{F11.logschool}&\multicolumn{1}{c}{F12.logschool}&\multicolumn{1}{c}{F13.logschool}&\multicolumn{1}{c}{F14.logschool}\\
+\midrule
+Log Life Expectancy at Birth&   -0.763\sym{*}  &   -1.499\sym{***}&   -1.013\sym{**} &   -1.433\sym{***}&   -1.332\sym{***}&   -1.400\sym{***}&   -1.211\sym{**} &   -1.802\sym{***}&   -0.722         &   -0.496         &   -0.753         &   -0.343         &   -0.108         &    0.710         &    0.900         \\
+                &  (0.313)         &  (0.359)         &  (0.354)         &  (0.433)         &  (0.261)         &  (0.366)         &  (0.389)         &  (0.332)         &  (0.408)         &  (0.391)         &  (0.409)         &  (0.393)         &  (0.459)         &  (0.456)         &  (0.498)         \\
+\midrule
+Observations    &      922         &      676         &      646         &      605         &      581         &      626         &      498         &      467         &      434         &      414         &      445         &      349         &      320         &      292         &      275         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  \\
+\bottomrule
+\multicolumn{16}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{16}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

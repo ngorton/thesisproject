@@ -1,0 +1,37 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Ordinary Least Squares Estimates, 6-Year Lead}
+\begin{tabular}{l*{10}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}&\multicolumn{1}{c}{(9)}&\multicolumn{1}{c}{(10)}\\
+                &\multicolumn{1}{c}{F5.enrollment}&\multicolumn{1}{c}{F6.enrollment}&\multicolumn{1}{c}{F7.enrollment}&\multicolumn{1}{c}{F8.enrollment}&\multicolumn{1}{c}{F10.enrollment}&\multicolumn{1}{c}{F5.enrollment}&\multicolumn{1}{c}{F6.enrollment}&\multicolumn{1}{c}{F7.enrollment}&\multicolumn{1}{c}{F8.enrollment}&\multicolumn{1}{c}{F10.enrollment}\\
+\midrule
+Chilldhood Survival Rate&    0.975\sym{***}&    0.671\sym{**} &    0.968\sym{***}&    0.436         &    1.342\sym{***}&                  &                  &                  &                  &                  \\
+                &  (0.212)         &  (0.246)         &  (0.253)         &  (0.249)         &  (0.246)         &                  &                  &                  &                  &                  \\
+\addlinespace
+loggdpcap       &   -0.573         &   -0.755         &   -1.413         &   -2.131         &   -5.239\sym{***}&   -0.962         &   -1.286         &   -1.767         &   -2.215         &   -5.801\sym{***}\\
+                &  (0.938)         &  (1.046)         &  (1.283)         &  (1.239)         &  (1.469)         &  (0.967)         &  (1.033)         &  (1.355)         &  (1.257)         &  (1.511)         \\
+\addlinespace
+Log Population  &    20.91\sym{***}&    28.74\sym{***}&    14.35         &    32.53\sym{***}&    13.50         &    30.38\sym{***}&    33.73\sym{***}&    23.02\sym{**} &    36.46\sym{***}&    20.69\sym{***}\\
+                &  (6.274)         &  (7.007)         &  (8.102)         &  (6.202)         &  (7.407)         &  (5.811)         &  (6.174)         &  (7.102)         &  (5.835)         &  (5.836)         \\
+\addlinespace
+Fertility Rate  &   -2.547\sym{**} &   -3.187\sym{***}&   -3.032\sym{**} &   -1.227         &   -0.564         &   -2.032\sym{*}  &   -2.577\sym{**} &   -1.825         &   -1.334         & -0.00426         \\
+                &  (0.886)         &  (0.886)         &  (1.031)         &  (0.790)         &  (1.118)         &  (0.888)         &  (0.796)         &  (1.034)         &  (0.803)         &  (1.171)         \\
+\addlinespace
+Civil Liberties &   -0.334         &   -1.250\sym{*}  &   -2.425\sym{***}&   -1.587\sym{***}&   -1.380\sym{**} &   -0.482         &   -1.243\sym{*}  &   -2.281\sym{***}&   -1.631\sym{***}&   -1.135\sym{*}  \\
+                &  (0.375)         &  (0.523)         &  (0.525)         &  (0.477)         &  (0.482)         &  (0.380)         &  (0.508)         &  (0.518)         &  (0.479)         &  (0.463)         \\
+\addlinespace
+Log Life Expectancy at Birth&                  &                  &                  &                  &                  &    23.99\sym{***}&    24.67\sym{***}&    27.57\sym{***}&    2.648         &    15.95\sym{*}  \\
+                &                  &                  &                  &                  &                  &  (6.230)         &  (7.453)         &  (7.702)         &  (6.845)         &  (7.340)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Country FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      626         &      498         &      467         &      434         &      445         &      626         &      498         &      467         &      434         &      445         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  &                  &                  &                  &                  &                  \\
+\bottomrule
+\multicolumn{11}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{11}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

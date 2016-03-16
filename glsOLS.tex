@@ -1,0 +1,37 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Ordinary Least Squares Estimates, 6-Year Lead}
+\begin{tabular}{l*{8}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                &\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}&\multicolumn{1}{c}{F6.logschool}\\
+\midrule
+Chilldhood Survival Rate&  -0.0211\sym{*}  &  -0.0120         &  -0.0316\sym{**} &  -0.0254\sym{*}  &                  &                  &                  &                  \\
+                &(0.00989)         & (0.0113)         & (0.0115)         & (0.0121)         &                  &                  &                  &                  \\
+\addlinespace
+loggdpcap       &   -0.166\sym{**} &   -0.171\sym{**} &   -0.184\sym{**} &  -0.0814         &   -0.161\sym{**} &   -0.166\sym{**} &   -0.170\sym{**} &  -0.0634         \\
+                & (0.0601)         & (0.0605)         & (0.0586)         & (0.0743)         & (0.0599)         & (0.0611)         & (0.0583)         & (0.0710)         \\
+\addlinespace
+Log Population  &                  &   -0.557         &   -0.491         &   -0.465         &                  &   -0.279         &   -0.699         &   -0.431         \\
+                &                  &  (0.418)         &  (0.401)         &  (0.430)         &                  &  (0.406)         &  (0.361)         &  (0.383)         \\
+\addlinespace
+Fertility Rate  &                  &                  &    0.465\sym{***}&    0.445\sym{***}&                  &                  &    0.436\sym{***}&    0.425\sym{***}\\
+                &                  &                  & (0.0576)         & (0.0609)         &                  &                  & (0.0549)         & (0.0568)         \\
+\addlinespace
+Civil Liberties &                  &                  &                  &   0.0673\sym{*}  &                  &                  &                  &   0.0674\sym{*}  \\
+                &                  &                  &                  & (0.0271)         &                  &                  &                  & (0.0263)         \\
+\addlinespace
+Log Life Expectancy at Birth&                  &                  &                  &                  &   -1.069\sym{**} &   -1.037\sym{*}  &   -1.104\sym{**} &   -1.211\sym{**} \\
+                &                  &                  &                  &                  &  (0.356)         &  (0.420)         &  (0.397)         &  (0.389)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Country FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      548         &      548         &      548         &      498         &      548         &      548         &      548         &      498         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  &                  &                  &                  \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

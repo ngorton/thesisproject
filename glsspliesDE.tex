@@ -1,0 +1,43 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Splines: First Stage Estimates}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+                &\multicolumn{1}{c}{F5.Schooling}&\multicolumn{1}{c}{F6.enrollment}&\multicolumn{1}{c}{F7.enrollment}&\multicolumn{1}{c}{F8.enrollment}&\multicolumn{1}{c}{F10.enrollment}\\
+\midrule
+weighted\_vaccine\_avg\_efficacy: (.,20)&    0.465         &   -0.545         &   -0.880\sym{**} &   -0.378         &    0.356         \\
+                &  (0.271)         &  (0.344)         &  (0.306)         &  (0.462)         &  (0.327)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (20,45)&   -0.191\sym{**} &    0.218\sym{**} &    0.217\sym{**} &    0.214\sym{**} &   0.0249         \\
+                & (0.0698)         & (0.0838)         & (0.0756)         & (0.0784)         & (0.0824)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (45,70)&  0.00699         &  -0.0165         &  -0.0292         &  -0.0202         &  -0.0942         \\
+                & (0.0537)         & (0.0551)         & (0.0564)         & (0.0552)         & (0.0643)         \\
+\addlinespace
+weighted\_vaccine\_avg\_efficacy: (70,.)&    0.230\sym{**} &   -0.305\sym{*}  &   -0.203         &   -0.598\sym{***}&   -0.466\sym{*}  \\
+                & (0.0859)         &  (0.120)         &  (0.127)         &  (0.137)         &  (0.185)         \\
+\addlinespace
+loggdpcap       &   0.0615         &   -0.543         &   -1.481         &   -2.382         &   -4.629\sym{**} \\
+                &  (1.003)         &  (1.120)         &  (1.360)         &  (1.217)         &  (1.550)         \\
+\addlinespace
+Log Population  &   -33.86\sym{***}&    35.78\sym{***}&    24.37\sym{***}&    34.24\sym{***}&    20.62\sym{**} \\
+                &  (5.880)         &  (6.201)         &  (4.801)         &  (5.656)         &  (6.386)         \\
+\addlinespace
+Fertility Rate  &    2.090\sym{*}  &   -2.653\sym{**} &   -2.779\sym{**} &   -1.484         &   -0.494         \\
+                &  (0.917)         &  (0.843)         &  (1.074)         &  (0.860)         &  (1.166)         \\
+\addlinespace
+Civil Liberties &    0.595         &   -0.905         &   -2.041\sym{***}&   -1.281\sym{**} &   -1.332\sym{**} \\
+                &  (0.397)         &  (0.503)         &  (0.515)         &  (0.467)         &  (0.460)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\addlinespace
+Country FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      626         &      498         &      467         &      434         &      445         \\
+\(R^{2}\)       &                  &                  &                  &                  &                  \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

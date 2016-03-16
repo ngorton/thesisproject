@@ -1,22 +1,9 @@
 ## Takes in raw life table data 
 library(ggplot2)
+library(xtable)
 # Load in the WHO data set, which comes from an API pull of GHO/Life 029
 setwd("~/Desktop/data")
 lifetables <- read.csv("complete_lifetables.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
-breastfeed <- read.csv("breastfeed6mo.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))
-
-basis.breastplot <- ggplot(data = breastfeed, aes(x = year, y = percent_excls_breastfeed)) + geom_point()
-
-breast.mean<- na.omit(aggregate(breastfeed$percent_excls_breastfeed, by=list(breastfeed$year), 
-                                   FUN=mean, na.rm=TRUE))
-
-combined.breasted <- merge(breast.mean, gavi00.year.schoolingMF, by= "Group.1")
-colnames(combined.breasted) <- c("Group.1", "Exclusive breastfeeding under 6 months","Rate of Primary School-Aged Children Out of School")
-
-melted.data <- melt(combined.breasted, id = "Group.1")
-
-basis.breastplot <- ggplot(data =na.omit(melted.data), aes(x = Group.1, y = value, color = variable)) + geom_line()+ theme_bw() + xlab("") + ylab("Percentage") + 
-  xlim(1987,2010) + theme(legend.title = element_blank(), legend.position="bottom") + labs(fill="")
 
 # Drop stupid variables 
 lifetables$PUBLISHSTATE <- NULL
@@ -49,13 +36,37 @@ lifetables$ageid[lifetables$AGEGROUP  == "AGE25-30"] <- 6
 lifetables$ageid[lifetables$AGEGROUP  == "AGE30-34"] <- 7
 lifetables$ageid[lifetables$AGEGROUP  == "AGE35-39"] <- 8
 lifetables$ageid[lifetables$AGEGROUP  == "AGE40-44"] <- 9
-lifetables$ageid[lifetables$AGEGROUP  == "AGE45-50"] <- 10
+lifetables$ageid[lifetables$AGEGROUP  == "AGE45-49"] <- 10
+lifetables$ageid[lifetables$AGEGROUP  == "AGE50-54"] <- 11
+lifetables$ageid[lifetables$AGEGROUP  == "AGE55-59"] <- 12
+lifetables$ageid[lifetables$AGEGROUP  == "AGE60-64"] <- 13
+lifetables$ageid[lifetables$AGEGROUP  == "AGE65-69"] <- 14
+lifetables$ageid[lifetables$AGEGROUP  == "AGE70-74"] <- 15
+lifetables$ageid[lifetables$AGEGROUP  == "AGE75-79"] <- 16
+lifetables$ageid[lifetables$AGEGROUP  == "AGE80-84"] <- 17
+lifetables$ageid[lifetables$AGEGROUP  == "AGE85-89"] <- 18
+lifetables$ageid[lifetables$AGEGROUP  == "AGE90-94"] <- 19
+lifetables$ageid[lifetables$AGEGROUP  == "AGE95-99"] <- 20
+lifetables$ageid[lifetables$AGEGROUP  == "AGE100+"] <- 21
 
 # Keep only observations for under age 50
 lifetables <- na.omit(lifetables)
 
 # Melt data down into long format
 melted.mort <- melt(lifetables, id=c("AGEGROUP", "COUNTRY", "YEAR", "ageid"))
+
+melted.mort$YEAR <- NULL
+melted.mort$ageid <- NULL
+melted.mort$variable <- NULL
+melted.mort$COUNTRY <- 1
+
+
+# Reshape long to wide 
+
+data.reshaped <- reshape(melted.mort, idvar = "AGEGROUP", timevar = "COUNTRY", direction = "wide")
+
+xtable(cor(data.reshaped), use="pairwise.complete.obs")
+
 
 # Aggregate values by year and country for ages 5-14
 # New dataframe is called youngmort 
@@ -100,5 +111,18 @@ melted.uklife$age <- factor(melted.uklife$age, levels = melted.uklife$age[order(
 k <- ggplot(na.omit(melted.uklife), aes(x = age, y = value)) + geom_point() + facet_wrap(~year) + theme_bw() + xlab("Age Group") + ylab("Probability of death between ages x and x+n") + theme(axis.text.x  = element_text(angle=90))
 
 
+## Plotting lag numbers
 
+effect <- c( -0.0329,  -0.0591,  -0.0318,  -0.0309, -0.0304, -0.0299, -0.0254, -0.0442,  -0.0224, -0.0254, -0.0377, -0.0135, 0, 0,0)
+lag <- c(0:14)
+
+ols.survive = data.frame(effect, lag)
+
+ols.survive.plot <- ggplot(data = ols.survive, aes(x =lag, y = effect)) + geom_line() + theme_bw() + xlab("Lead on Schooling")+ylab("Effect of Childhood Survival") + theme(axis.title.x = element_text(size = rel(1.3)), axis.title.y = element_text(size = rel(1.3)))
+
+effect2 <- c(-.763,-1.499,-1.013,-1.433,-1.332,-1.400,-1.211,-1.80,0,0,0,0,0,0,0)
+
+ols.life = data.frame(effect2, lag)
+
+ols.life.plot <- ggplot(data = ols.life, aes(x =lag, y = effect2)) + geom_line() + theme_bw() + xlab("Lead on Schooling")+ylab("Effect of Life Expectancy")+theme(axis.title.x = element_text(size = rel(1.3)), axis.title.y = element_text(size = rel(1.3)))
 

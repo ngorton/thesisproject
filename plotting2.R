@@ -213,10 +213,10 @@ combined.plot.gdp <- ggplot(data = low.years, aes(x = loggdp, y = school))+geom_
 
 gavi00.mortality <- aggregate(gavi00$survival_rate, by=list(gavi00$year), 
                            FUN=mean, na.rm=TRUE)
-gavi00.lifeexpect <- aggregate(gavi00$loglifeexpect, by=list(gavi00$year), 
+gavi00.lifeexpect <- aggregate(gavi00$lifeexpect, by=list(gavi00$year), 
                               FUN=mean, na.rm=TRUE)
 
-gavi.life <- ggplot(data = gavi00.lifeexpect, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Log Life Expectancy")
+gavi.life <- ggplot(data = gavi00.lifeexpect, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Log Life Expectancy")+xlim(1980,2014)
 
 gavi.mort <- ggplot(data = gavi00.mortality, aes(x = Group.1, y = x))+geom_point() + theme_bw() + xlab("Year") + ylab("Childhood Survival Rate") +xlim(1980,2014)
 

@@ -1,0 +1,50 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Region-Specific Effects}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                &\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}&\multicolumn{1}{c}{Schooling}\\
+\midrule
+Chilldhood Survival Rate&   -3.892\sym{***}&   -4.883\sym{***}&   -1.022         &   -4.211\sym{***}\\
+                &  (0.669)         &  (1.163)         &  (2.421)         &  (1.075)         \\
+\addlinespace
+loggdpcap       &    2.196         &  -0.0696         &   -1.881         &    1.465         \\
+                &  (1.951)         &  (3.430)         &  (4.359)         &  (3.881)         \\
+\addlinespace
+Log Population  &   -1.863\sym{**} &   -2.109         &   -1.193         &   -4.084\sym{***}\\
+                &  (0.679)         &  (1.577)         &  (1.739)         &  (0.940)         \\
+\addlinespace
+Fertility Rate  &  -0.0624         &   -4.602         &    9.568         &    2.559         \\
+                &  (1.844)         &  (4.019)         &  (5.927)         &  (2.505)         \\
+\addlinespace
+Civil Liberties &   -0.535         &    1.563         &    0.387         &   -1.901         \\
+                &  (0.774)         &  (1.334)         &  (2.529)         &  (2.377)         \\
+\addlinespace
+Europe & Central Asia&   -1.418         &                  &                  &        0         \\
+                &  (4.095)         &                  &                  &      (.)         \\
+\addlinespace
+Latin America & Caribbean&   -3.337         &                  &                  &        0         \\
+                &  (4.439)         &                  &                  &      (.)         \\
+\addlinespace
+Middle East & North Africa&    28.42\sym{***}&                  &                  &    6.926         \\
+                &  (6.437)         &                  &                  &  (5.345)         \\
+\addlinespace
+North America   &        0         &                  &                  &        0         \\
+                &      (.)         &                  &                  &      (.)         \\
+\addlinespace
+South Asia      &    10.96\sym{**} &                  &                  &        0         \\
+                &  (3.783)         &                  &                  &      (.)         \\
+\addlinespace
+Sub-Saharan Africa&   -6.068         &                  &                  &        0         \\
+                &  (3.836)         &                  &                  &      (.)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      299         &      166         &       36         &       46         \\
+\(R^{2}\)       &    0.518         &    0.104         &    0.827         &    0.859         \\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

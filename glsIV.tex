@@ -1,0 +1,35 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Primary Specification: Second Stage}
+\begin{tabular}{l*{8}{c}}
+\toprule
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
+                &\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}&\multicolumn{1}{c}{Log Unenrolled Rate}\\
+\midrule
+Childhood Survival Rate&   -0.105\sym{*}  &   -0.126\sym{+}  &  -0.0594         &  -0.0582         &                  &                  &                  &                  \\
+                & (0.0517)         & (0.0675)         & (0.0531)         & (0.0553)         &                  &                  &                  &                  \\
+\addlinespace
+loggdpcap       &  -0.0191         &   0.0769         &   0.0289         &   0.0819         &    0.103         &    0.131         &   0.0611         &    0.122         \\
+                &  (0.152)         &  (0.113)         & (0.0988)         &  (0.107)         &  (0.154)         &  (0.116)         &  (0.109)         &  (0.116)         \\
+\addlinespace
+Log Population  &                  &    1.195         &  0.00598         &   0.0716         &                  &    0.271         &   -0.367         &   -0.317         \\
+                &                  &  (1.662)         &  (1.272)         &  (1.374)         &                  &  (1.278)         &  (1.013)         &  (1.084)         \\
+\addlinespace
+Fertility Rate  &                  &                  &    0.434\sym{**} &    0.439\sym{**} &                  &                  &    0.395\sym{**} &    0.404\sym{**} \\
+                &                  &                  &  (0.137)         &  (0.148)         &                  &                  &  (0.130)         &  (0.140)         \\
+\addlinespace
+Civil Liberties &                  &                  &                  &  -0.0344         &                  &                  &                  &  -0.0195         \\
+                &                  &                  &                  & (0.0508)         &                  &                  &                  & (0.0463)         \\
+\addlinespace
+Log Life Expectancy at Birth&                  &                  &                  &                  &   -4.368\sym{*}  &   -4.567\sym{+}  &   -2.374         &   -2.263         \\
+                &                  &                  &                  &                  &  (2.184)         &  (2.599)         &  (2.139)         &  (2.179)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &      998         &      998         &      998         &      920         &     1000         &     1000         &     1000         &      922         \\
+\(R^{2}\)       &    0.266         &    0.262         &    0.318         &    0.309         &    0.263         &    0.260         &    0.315         &    0.306         \\
+\bottomrule
+\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{9}{l}{\footnotesize \sym{+} \(p<0.10\), \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+\end{table}

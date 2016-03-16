@@ -193,6 +193,15 @@ replace iso_code = "ROU" if (iso_code == "ROM")
 replace iso_code = "COD" if (iso_code == "ZAR")
 save under5pop, replace
 
+
+clear
+
+insheet using GDP.csv, comma names
+reshape long gdp, i(iso_code) j(year)
+replace iso_code = "ROU" if (iso_code == "ROM")
+replace iso_code = "COD" if (iso_code == "ZAR")
+save GDPtotal, replace
+
 clear
 
 insheet using WHOchild_mort.csv, comma names
@@ -285,6 +294,9 @@ merge 1:1 iso_code year using gdpcap
 drop _merge
 
 merge 1:1 iso_code year using oldmort
+drop _merge
+
+merge 1:1 iso_code year using GDPtotal
 drop _merge
 
 merge 1:1 iso_code year using unesco

@@ -21,8 +21,9 @@ xtset pan_id year
 gen in_sample = 1
 
 gen interpolated_school = rateofoutofschoolmf
-gen fiveyearlaggedlu = l5.lu
+gen fiveyearlaggedlu = l10.lu
 replace interpolated_school = fiveyearlaggedlu if missing(rateofoutofschoolmf)
+gen enrollment = 100 - interpolated_school
 
 replace in_sample = 0 if missing(unicefmcv1) | missing(interpolated_school)
 
@@ -237,6 +238,7 @@ bysort code year: gen intervention_year_dummy_DTP = 1 if !missing(intervention_y
 bysort code year: replace intervention_year_dummy_DTP = 0 if missing(intervention_year_DTP) & !missing(unicefdtp1)
 
 
+label variable loggdpcap "Log GDP Per Cap."
 * Calculate Survival Rate * 
 gen mortality_perc = mortality/1000 * 100 
 gen survival_rate = 100 - mortality_perc
@@ -346,6 +348,22 @@ drop _merge
 quietly bysort pan_id year:  gen dup = cond(_N==1,0,_n)
 drop if dup >1 
 drop dup
+
+// Region codes
+merge m:1 iso_code using regioncodes
+drop _merge
+
+drop v59-v69 v16
+drop region
+encode region_code, gen(region)
+
+drop if missing(year)
+
+rename iso_code code 
+
+merge 1:1 code year using lifetables
+drop if _merge == 2
+drop _merge 
 
 // Set up panel data!
 xtset
