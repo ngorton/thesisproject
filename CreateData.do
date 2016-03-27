@@ -298,9 +298,15 @@ merge 1:1 iso_code year using adultmort
 drop _merge
 
 merge 1:1 iso_code year using infantmort
+drop if _merge == 2
+drop _merge
+
+merge 1:1 iso_code year using wbprimary
+drop if _merge == 2
 drop _merge
 
 merge 1:1 iso_code year using schooling_formatted
+drop if _merge == 2
 drop _merge
 
 save master, replace

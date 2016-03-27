@@ -344,6 +344,10 @@ drop _merge
 merge 1:1 iso_code year using meanyears_long
 drop _merge
 
+merge 1:1 iso_code year using primary_age
+drop _merge
+
+
 // Delete dups
 quietly bysort pan_id year:  gen dup = cond(_N==1,0,_n)
 drop if dup >1 
@@ -361,10 +365,19 @@ drop if missing(year)
 
 rename iso_code code 
 
-merge 1:1 code year using lifetables
+merge 1:1 code year using lifetables_merge
 drop if _merge == 2
 drop _merge 
 
+rename code  iso_code
+merge 1:1 iso_code year using preprimary
+drop if _merge == 2
+drop _merge 
+
+ merge 1:1 iso_code year using wbprimary
+ drop if _merge == 2
+drop _merge
+ 
 // Set up panel data!
 xtset
 

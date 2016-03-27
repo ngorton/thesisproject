@@ -30,3 +30,4 @@ gen dtp1_effective = .70
 gen dtp3_effective = .90
 
 gen weighted_vaccine_avg_efficacy = (measles_effective*unicefmcv1*measles_weight+ pol_effective*unicefpol3*pol_weight + dtp_weight*((unicefdtp1*dtp1_effective + unicefdtp3*dtp3_effective))/2)
+

@@ -161,6 +161,13 @@ replace iso_code = "COD" if (iso_code == "ZAR")
 save under14pop, replace
 clear
 
+insheet using primary_age.csv, comma names
+reshape long primarystart, i(iso_code) j(year)
+replace iso_code = "COD" if (iso_code == "ZAR")
+save primaryage, replace
+clear
+
+
 insheet using unesco.csv, comma names
 save unesco, replace
 clear
@@ -240,6 +247,10 @@ drop _merge
 merge 1:1 iso_code year using line_item 
 drop _merge
 
+merge 1:1 iso_code year using preprimary
+drop if _merge == 2
+drop _merge 
+
 merge 1:1 iso_code year using countryreportedMCV1
 drop _merge
 
@@ -311,7 +322,11 @@ drop _merge
 merge 1:1 iso_code year using infantmort
 drop _merge
 
+merge 1:1 iso_code year using primaryage
+drop _merge
+
 merge 1:1 iso_code year using schooling_formatted
+drop age
 drop _merge
 
 save master, replace

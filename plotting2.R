@@ -1,11 +1,12 @@
 # Data work #
 # Covert data from STATA to CSV #
-setwd("~/Desktop/data")
+setwd("~/Desktop/UChicagoYear4/MetricsB/Paper")
 library(foreign)
 library(ggplot2)
 library(plm)
 library(stargazer)
-write.table(read.dta('fridaynight.dta'), file="output.csv", quote = FALSE, sep = ",")
+write.table(read.dta('five_percent_sample12.dta'), file="MetricsGameSample.csv", quote = FALSE, sep = ",", col.names = NA)
+write.table(read.dta('countrydata_merged12.dta'), file="MetricsGameCountryVariables.csv", quote = FALSE, sep = ",", col.names = NA)
 
 # Read it into R #
 thesis.data <- read.csv("output.csv", header = TRUE, row.names=NULL, na.strings=c("","NA"))

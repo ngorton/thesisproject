@@ -44,27 +44,9 @@ egen sd_years_primary = sd(yr_sch_pri), by(agegroup country)
 bys agegroup country: gen age_total = rnormal(avg_years_total, sd_years_total)
 bys country year agegroup: gen average_age = (agefrom + ageto)/2 - age_total
 
-*Calculate age of starting school based on age - average years being in school)*
-bys country year agegroup: gen average_age_raw = (agefrom + ageto)/2 - yr_sch
-
 *calculate year they began schooling*
 *restrict to youngest cohort*
 keep if agegroup == 1
-
-*find what year they started primary school, on average*
-bys year country agegroup: gen year_primary = year
-foreach x in country year agegroup {
-replace year_primary = year - average_age_raw
-}
-
-*use world bank official primary school entrance age data*
-merge 1:1 iso_code year using primary_age
-bys country: egen average_entrance_age = mean(age)
-
-bys year country agegroup: gen year_primary_wb = 0
-foreach x in country year agegroup {
-replace year_primary_wb = trunc(year - (((ageto+agefrom)/2) - average_entrance_age))
-}
 
 drop if missing(lu)
 

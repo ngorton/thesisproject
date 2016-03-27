@@ -1,5 +1,4 @@
-
-// Only keep certain years
+** Create Some Important Variables ** 
 
 *gen young_mort = mortality-infantmort
 *gen infant_survive = (1 - infantmort/1000)*100
@@ -11,12 +10,13 @@ label variable logschool "Log Unenrolled Rate"
 gen enrollment = 100 - interpolated_school
 label variable enrollment "Primary Enrollment Rate"
 
-
-gen survival_probability59 = 1 - prob_deathAGE5_9
-gen survival_probability1014 = 1 - prob_deathAGE10_14
-gen survival_probability1519 = 1 - prob_deathAGE15_19
+gen survival_probability59 = 1 - probdeathAGE59
+gen survival_probability1014 = 1 - probdeathAGE1014
+gen survival_probability1519 = 1 - probdeathAGE1519
 
 gen cumulative_survival = ((survival_probability59 * survival_probability1014) * survival_probability1519)*100
+
+gen total_childsurvive = ((survival_rate/100)*((survival_probability59 * survival_probability1014) * survival_probability1519))*100
 
 label variable cumulative_survival "Probability of Survival from Age 5 to 20"
 
@@ -126,6 +126,10 @@ eststo: xtgls loglifeexpect vax1-vax4 i.year loggdpcap logpop fertility libertie
 esttab using glsspliesFS.tex, replace indicate("Year FE = *.year" "Country FE = *.pan_id") label booktabs title("Splines: First Stage Estimates") se r2 noconstant compress nobaselevels 
 
 
+mkspline vax_split1 10 vax_split2 20 vax_split3 30 vax_split4 40 vax_split5 50 vax_split6 60 vax_split7 70 vax_split8 80 vax_split9 90 vax_split10 = weighted_vaccine_avg
+
+
+
 // Splines IV Stage 
 
 eststo clear
@@ -135,7 +139,8 @@ eststo: xtivreg2 f5.enrollment loggdpcap logpop fertility liberties yr23-yr58  (
 
 esttab using IVSplinesBasic.tex, replace fragment indicate("Year FE = yr23 yr24 yr25 yr26 yr27 yr28 yr29 yr30 yr31 yr32 yr33 yr34 yr35 yr36 yr37 yr38 yr39 yr40 yr41 yr42 yr43 yr44 yr45 yr46 yr47 yr48 yr49 yr50 yr51 yr52 yr53 yr54 yr55 yr56 yr57 yr58") label booktabs title("Splines: Second Stage Estimates") se r2 noconstant compress nobaselevels 
 
-
+mkspline vax_split1 10 vax_split2 20 vax_split3 30 vax_split4 40 vax_split5 50 vax_split6 60 vax_split7 70 vax_split8 80 vax_split9 90 vax_split10 = weighted_vaccine_avg
+xtgls survival_rate vax_split1-vax_split10 i.year loggdpcap logpop fertility liberties i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
 eststo clear
 
@@ -160,7 +165,7 @@ esttab using glssplinesIV.tex, replace fragment indicate("Year FE = yr23 yr24 yr
 // Direct Effect
 eststo clear
 
-eststo: xtgls f5.interpolated_school vax1-vax4 i.year loggdpcap logpop fertility liberties i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+eststo: xtgls f5.enrollment vax1-vax4 i.year loggdpcap logpop fertility liberties i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
 eststo: xtgls f6.enrollment vax1-vax4 i.year loggdpcap logpop fertility liberties i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
@@ -173,6 +178,7 @@ eststo: xtgls f10.enrollment vax1-vax4 i.year loggdpcap logpop fertility liberti
 esttab using glsspliesDE.tex, replace indicate("Year FE = *.year" "Country FE = *.pan_id") label booktabs title("Splines: First Stage Estimates") se r2 noconstant compress nobaselevels 
 
 // Other Growth Outcomes
+**OLS estimates**
 eststo clear
 
 eststo: xtgls fertility survival_rate loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
@@ -182,9 +188,9 @@ eststo: xtgls loggdpcap survival_rate logpop fertility  i.pan_id i.year if in_sa
 
 eststo: xtgls loggdp  survival_rate logpop fertility  i.pan_id i.year  if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
-eststo: xtgls fertility loglifeexpect loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+eststo: xtgls fertility loglifeexpect loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1 & (year == 1980 | year == 1990 | year == 2000 | year == 2010), corr(ar1) panels(heteroskedastic)  force
 
-eststo: xtgls logpop  loglifeexpect loggdpcap fertility  i.pan_id i.year  if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+eststo: xtgls logpop  loglifeexpect loggdpcap fertility  i.pan_id i.year  if in_sample == 1 & gavi_status_00 == 1 (year == 1980 | year == 1990 | year == 2000 | year == 2012), corr(ar1) panels(heteroskedastic)  force
 
 eststo: xtgls loggdpcap loglifeexpect logpop fertility  i.pan_id i.year if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
@@ -192,7 +198,7 @@ eststo: xtgls loggdp  loglifeexpect logpop fertility  i.pan_id i.year  if in_sam
 
 esttab using OLSGrowth.tex, replace indicate("Year FE = *.year" "Country FE = *.pan_id") label booktabs title("Non-Human Capital Growth Outcomes: OLS") se r2 noconstant compress nobaselevels  star(+ 0.10 * 0.05 ** 0.01 *** 0.001)
 
-
+**IV estimates**
 eststo clear
 
 eststo: xtivreg2 fertility loggdpcap logpop yr23-yr58  (survival_rate = weighted_vaccine_avg_eff) if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id)
@@ -214,7 +220,6 @@ eststo: xtivreg2 loggdp logpop fertility yr23-yr58  (loglifeexpect= weighted_vac
 esttab using IVGrowth.tex, replace indicate("Year FE = yr23 yr24 yr25 yr26 yr27 yr28 yr29 yr30 yr31 yr32 yr33 yr34 yr35 yr36 yr37 yr38 yr39 yr40 yr41 yr42 yr43 yr44 yr45 yr46 yr47 yr48 yr49 yr50 yr51 yr52 yr53 yr54 yr55 yr56 yr57 yr58") label booktabs title("Non-Human Capital Growth Outcomes: IV") se r2 noconstant compress nobaselevels star(+ 0.10 * 0.05 ** 0.01 *** 0.001) 
 
 //Formatting Abbreviated Results
-
 
 eststo clear
 
@@ -278,18 +283,50 @@ esttab using Leads.tex, replace indicate("Year FE = yr23 yr24 yr25 yr26 yr27 yr2
 
 eststo clear
 
-** First Stage ** 
-eststo: xtgls cumulative_survival weighted_vaccine_avg_eff i.year loggdpcap logpop fertility liberties  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
-
-** Reduced Form ** 
+** OLS ** 
 eststo: xtgls enrollment cumulative_survival i.year loggdpcap logpop fertility liberties  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
-** IV **
-eststo: quietly xtivreg2 f5.enrollment loggdpcap logpop fertility liberties yr23-yr58  (cumulative_survival = weighted_vaccine_avg_eff) if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id) 
+** First Stage ** 
+eststo: xtgls cumulative_survival l5.weighted_vaccine_avg_eff i.year loggdpcap logpop fertility liberties  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
 
-esttab using Older.tex, replace indicate("Year FE = yr23 yr24 yr25 yr26 yr27 yr28 yr29 yr30 yr31 yr32 yr33 yr34 yr35 yr36 yr37 yr38 yr39 yr40 yr41 yr42 yr43 yr44 yr45 yr46 yr47 yr48 yr49 yr50 yr51 yr52 yr53 yr54 yr55 yr56 yr57 yr58") label booktabs title("Non-Human Capital Growth Outcomes: IV") se r2 noconstant compress nobaselevels star(+ 0.10 * 0.05 ** 0.01 *** 0.001) 
+** IV **
+eststo: quietly xtivreg2 enrollment loggdpcap logpop fertility liberties yr23-yr58  (cumulative_survival = l5.weighted_vaccine_avg_eff) if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id) 
+
+esttab using Older.tex, replace fragment indicate("Year FE = yr23 yr24 yr25 yr26 yr27 yr28 yr29 yr30 yr31 yr32 yr33 yr34 yr35 yr36 yr37 yr38 yr39 yr40 yr41 yr42 yr43 yr44 yr45 yr46 yr47 yr48 yr49 yr50 yr51 yr52 yr53 yr54 yr55 yr56 yr57 yr58") label booktabs title("Non-Human Capital Growth Outcomes: IV") se r2 noconstant compress nobaselevels star(+ 0.10 * 0.05 ** 0.01 *** 0.001) 
 
 // Summary Statistics 
 
 estpost tabstat interpolated_school survival_rate young_survive vaxspending unicefmcv1 unicefmcv2 unicefdtp1 unicefdtp3 unicefpol3 lifeexpect pop gdpcap, by(gavi_status_00) statistics(mean sd max min) columns(statistics) listwise not 
 estpost tabstat prob_deathAGE100PLUS prob_deathAGE10_14 prob_deathAGE15_19 prob_deathAGE1_4 prob_deathAGE20_24 prob_deathAGE25_29 prob_deathAGE30_34 prob_deathAGE35_39 prob_deathAGE40_44 prob_deathAGE45_49 prob_deathAGE50_54 prob_deathAGE55_59 prob_deathAGE5_9 prob_deathAGE60_64 prob_deathAGE65_69 prob_deathAGE70_74 prob_deathAGE75_79 prob_deathAGE80_84 prob_deathAGE85_89 prob_deathAGE90_94 prob_deathAGE95_99 prob_deathAGELT1, statistics(mean sd max min) columns(statistics) listwise not 
+
+
+// Threshold Effects
+
+gen threshold = (weighted_vaccine_avg_efficacy > 60)
+
+gen threshold_high = (weighted_vaccine_avg_efficacy > 80)
+
+xtgls survival_rate threshold i.year loggdpcap logpop fertility liberties  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+** Region Effects ** 
+
+eststo clear
+
+eststo: quietly bysort region: xtgls survival_rate weighted_vaccine_avg_eff loggdpcap logpop fertility liberties i.pan_id  i.year  if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+eststo: quietly bysort region: xtgls enrollment weighted_vaccine_avg_eff loggdpcap logpop fertility liberties i.pan_id  i.year  if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+eststo: quietly bysort region: xtivreg2 enrollment loggdpcap logpop fertility liberties yr23-yr58  (survival_rate = weighted_vaccine_avg_eff) if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id) 
+
+
+** Fertility ** 
+
+xtgls fertility weighted_vaccine_avg_eff survival_rate loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+xtgls fertility threshold survival_rate loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+xtgls f.fertility weighted_vaccine_avg_eff survival_rate loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+xtgls f2.fertility weighted_vaccine_avg_eff survival_rate loggdpcap logpop i.year  i.pan_id if in_sample == 1 & gavi_status_00 == 1, corr(ar1) panels(heteroskedastic)  force
+
+xtivreg2 f5.enrollment loggdpcap logpop fertility liberties yr23-yr58  (fertility = weighted_vaccine_avg_eff) if in_sample == 1 & gavi_status_00 == 1, fe robust cluster(pan_id) 

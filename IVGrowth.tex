@@ -1,32 +1,35 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Non-Human Capital Growth Outcomes: IV}
-\begin{tabular}{l*{8}{c}}
+\begin{tabular}{l*{6}{c}}
 \toprule
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)}\\
-                &\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{loggdpcap}&\multicolumn{1}{c}{loggdp}&\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{loggdpcap}&\multicolumn{1}{c}{loggdp}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{Log GDP Per Cap.}&\multicolumn{1}{c}{Fertility Rate}&\multicolumn{1}{c}{Log Population}&\multicolumn{1}{c}{Log GDP Per Cap.}\\
 \midrule
-Chilldhood Survival Rate&   -0.153\sym{+}  &   0.0170\sym{**} &   0.0425         &   0.0418         &                  &                  &                  &                  \\
-                & (0.0798)         &(0.00531)         & (0.0290)         & (0.0289)         &                  &                  &                  &                  \\
+Chilldhood Survival Rate&   -0.122\sym{+}  &   0.0219\sym{**} &   0.0884\sym{+}  &                  &                  &                  \\
+                & (0.0642)         &(0.00790)         & (0.0499)         &                  &                  &                  \\
 \addlinespace
-loggdpcap       &    0.111         &  -0.0810\sym{***}&                  &                  &    0.176         &   -0.101\sym{***}&                  &                  \\
-                &  (0.149)         & (0.0166)         &                  &                  &  (0.147)         & (0.0198)         &                  &                  \\
+Log GDP Per Cap.&   0.0347         &  -0.0896\sym{***}&                  &   0.0272         &   -0.108\sym{***}&                  \\
+                &  (0.174)         & (0.0236)         &                  &  (0.155)         & (0.0300)         &                  \\
 \addlinespace
-Log Population  &    2.738         &                  &   -2.181\sym{***}&   -1.193\sym{*}  &    1.614         &                  &   -1.877\sym{***}&   -0.893\sym{**} \\
-                &  (1.746)         &                  &  (0.470)         &  (0.477)         &  (1.349)         &                  &  (0.294)         &  (0.299)         \\
+Log Population  &    1.189         &                  &   -2.826\sym{***}&    0.180         &                  &   -2.121\sym{***}\\
+                &  (1.261)         &                  &  (0.662)         &  (0.953)         &                  &  (0.483)         \\
 \addlinespace
-Fertility Rate  &                  & -0.00584         &  -0.0207         &  -0.0169         &                  &  0.00585         &  0.00746         &   0.0104         \\
-                &                  & (0.0200)         & (0.0482)         & (0.0484)         &                  & (0.0235)         & (0.0485)         & (0.0488)         \\
+Civil Liberties &   -0.226\sym{***}&   0.0140         &   0.0245         &   -0.135\sym{**} &  0.00185         &  -0.0259         \\
+                & (0.0509)         & (0.0121)         & (0.0602)         & (0.0499)         & (0.0128)         & (0.0412)         \\
 \addlinespace
-Log Life Expectancy at Birth&                  &                  &                  &                  &   -5.549\sym{+}  &    0.759\sym{**} &    1.681         &    1.652         \\
-                &                  &                  &                  &                  &  (3.045)         &  (0.284)         &  (1.099)         &  (1.095)         \\
+Fertility Rate  &                  &  0.00425         &   0.0280         &                  &   0.0402         &    0.145         \\
+                &                  & (0.0248)         & (0.0982)         &                  & (0.0492)         &  (0.166)         \\
 \addlinespace
-Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Log Life Expectancy at Birth&                  &                  &                  &   -4.971\sym{*}  &    1.257\sym{*}  &    4.190\sym{*}  \\
+                &                  &                  &                  &  (2.318)         &  (0.515)         &  (2.118)         \\
+\addlinespace
+Year FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
 \midrule
-Observations    &      998         &      998         &      998         &      996         &     1000         &     1000         &     1000         &      998         \\
-\(R^{2}\)       &    0.546         &    0.937         &    0.757         &    0.849         &    0.563         &    0.909         &    0.758         &    0.851         \\
+Observations    &      183         &      183         &      183         &      183         &      183         &      183         \\
+\(R^{2}\)       &    0.714         &    0.916         &    0.722         &    0.733         &    0.833         &    0.653         \\
 \bottomrule
-\multicolumn{9}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{9}{l}{\footnotesize \sym{+} \(p<0.10\), \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{+} \(p<0.10\), \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
 \end{tabular}
 \end{table}
